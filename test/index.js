@@ -14,8 +14,17 @@ describe('Add propType doc to react classes', () => {
     it(`should ${caseName.split('-').join(' ')}`, () => {
       const fixtureDir = path.join(fixturesDir, caseName);
       const actualPath = path.join(fixtureDir, 'actual.js');
-      const actual = transformFileSync(actualPath).code;
-
+      const options = {
+        presets: [
+          "react",
+          "es2015",
+        ],
+        plugins: [
+          plugin
+        ],
+        babelrc: false
+      };
+      const actual = transformFileSync(actualPath, options).code;
       const expected = fs.readFileSync(
           path.join(fixtureDir, 'expected.js')
       ).toString();

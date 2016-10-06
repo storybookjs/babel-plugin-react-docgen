@@ -10,11 +10,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _logo = require('./logo.svg');
-
-var _logo2 = _interopRequireDefault(_logo);
-
-require('./App.css');
+require('./styles.css');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24,48 +20,35 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var App = function (_Component) {
-  _inherits(App, _Component);
+var ErrorBox = function (_React$Component) {
+  _inherits(ErrorBox, _React$Component);
 
-  function App() {
-    _classCallCheck(this, App);
+  function ErrorBox() {
+    _classCallCheck(this, ErrorBox);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ErrorBox.__proto__ || Object.getPrototypeOf(ErrorBox)).apply(this, arguments));
   }
 
-  _createClass(App, [{
+  _createClass(ErrorBox, [{
     key: 'render',
     value: function render() {
+      var children = this.props.children;
+
+
       return _react2.default.createElement(
         'div',
-        { className: 'App' },
-        _react2.default.createElement(
-          'div',
-          { className: 'App-header' },
-          _react2.default.createElement('img', { src: _logo2.default, className: 'App-logo', alt: 'logo' }),
-          _react2.default.createElement(
-            'h2',
-            null,
-            'Welcome to React'
-          )
-        ),
-        _react2.default.createElement(
-          'p',
-          { className: 'App-intro' },
-          'To get started, edit ',
-          _react2.default.createElement(
-            'code',
-            null,
-            'src/App.js'
-          ),
-          ' and save to reload.'
-        )
+        { className: 'error-box' },
+        children
       );
     }
   }]);
 
-  return App;
-}(_react.Component);
+  return ErrorBox;
+}(_react2.default.Component);
 
-exports.default = App;
-App.__docgenInfo = '{"description":"","methods":[]}';
+ErrorBox.propTypes = {
+  children: _react2.default.PropTypes.node.isRequired
+};
+
+exports.default = ErrorBox;
+ErrorBox.__docgenInfo = '{"description":"","methods":[],"props":{"children":{"type":{"name":"node"},"required":true,"description":""}}}';
