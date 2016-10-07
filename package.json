@@ -27,5 +27,6 @@
     "babel-preset-react": "6.x.x",
     "lodash": "4.x.x",
     "react-docgen": "2.x.x"
-  }
+  },
+  "license" : "MIT"
 }
