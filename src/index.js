@@ -1,6 +1,5 @@
-import {find, functionsIn} from 'lodash';
+import {find} from 'lodash';
 import * as reactDocs from 'react-docgen';
-import fs from 'fs';
 
 export default function({types: t}) {
   function isReactLikeClass(node) {
