@@ -68,4 +68,7 @@ var App = function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-App.__docgenInfo = '{"description":"","methods":[]}';
+App.__docgenInfo = {
+  description: '',
+  methods: []
+};

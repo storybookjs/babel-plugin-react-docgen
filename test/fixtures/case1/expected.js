@@ -181,4 +181,243 @@ exports.default = CalendarDay;
 
 CalendarDay.propTypes = propTypes;
 CalendarDay.defaultProps = defaultProps;
-CalendarDay.__docgenInfo = '{"description":"","methods":[{"name":"handleDayClick","docblock":null,"modifiers":[],"params":[{"name":"day","type":null},{"name":"modifiers","type":null},{"name":"e","type":null}],"returns":null},{"name":"handleDayMouseDown","docblock":null,"modifiers":[],"params":[{"name":"day","type":null},{"name":"modifiers","type":null},{"name":"e","type":null}],"returns":null},{"name":"handleDayMouseUp","docblock":null,"modifiers":[],"params":[{"name":"day","type":null},{"name":"modifiers","type":null},{"name":"e","type":null}],"returns":null},{"name":"handleDayMouseEnter","docblock":null,"modifiers":[],"params":[{"name":"day","type":null},{"name":"modifiers","type":null},{"name":"e","type":null}],"returns":null},{"name":"handleDayMouseLeave","docblock":null,"modifiers":[],"params":[{"name":"day","type":null},{"name":"modifiers","type":null},{"name":"e","type":null}],"returns":null},{"name":"handleDayTouchStart","docblock":null,"modifiers":[],"params":[{"name":"day","type":null},{"name":"modifiers","type":null},{"name":"e","type":null}],"returns":null},{"name":"handleDayTouchEnd","docblock":null,"modifiers":[],"params":[{"name":"day","type":null},{"name":"modifiers","type":null},{"name":"e","type":null}],"returns":null},{"name":"handleDayTouchTap","docblock":null,"modifiers":[],"params":[{"name":"day","type":null},{"name":"modifiers","type":null},{"name":"e","type":null}],"returns":null}],"props":{"day":{"type":{"name":"custom","raw":"momentPropTypes.momentObj"},"required":false,"description":"","defaultValue":{"value":"moment()","computed":true}},"modifiers":{"type":{"name":"arrayOf","value":{"name":"string"}},"required":false,"description":"","defaultValue":{"value":"[]","computed":false}},"onDayClick":{"type":{"name":"func"},"required":false,"description":"","defaultValue":{"value":"function() {}","computed":false}},"onDayMouseDown":{"type":{"name":"func"},"required":false,"description":"","defaultValue":{"value":"function() {}","computed":false}},"onDayMouseUp":{"type":{"name":"func"},"required":false,"description":"","defaultValue":{"value":"function() {}","computed":false}},"onDayMouseEnter":{"type":{"name":"func"},"required":false,"description":"","defaultValue":{"value":"function() {}","computed":false}},"onDayMouseLeave":{"type":{"name":"func"},"required":false,"description":"","defaultValue":{"value":"function() {}","computed":false}},"onDayTouchStart":{"type":{"name":"func"},"required":false,"description":"","defaultValue":{"value":"function() {}","computed":false}},"onDayTouchEnd":{"type":{"name":"func"},"required":false,"description":"","defaultValue":{"value":"function() {}","computed":false}},"onDayTouchTap":{"type":{"name":"func"},"required":false,"description":"","defaultValue":{"value":"function() {}","computed":false}}}}';
+CalendarDay.__docgenInfo = {
+  description: '',
+  methods: [{
+    name: 'handleDayClick',
+    docblock: null,
+    modifiers: [],
+    params: [{
+      name: 'day',
+      type: null
+    }, {
+      name: 'modifiers',
+      type: null
+    }, {
+      name: 'e',
+      type: null
+    }],
+    returns: null
+  }, {
+    name: 'handleDayMouseDown',
+    docblock: null,
+    modifiers: [],
+    params: [{
+      name: 'day',
+      type: null
+    }, {
+      name: 'modifiers',
+      type: null
+    }, {
+      name: 'e',
+      type: null
+    }],
+    returns: null
+  }, {
+    name: 'handleDayMouseUp',
+    docblock: null,
+    modifiers: [],
+    params: [{
+      name: 'day',
+      type: null
+    }, {
+      name: 'modifiers',
+      type: null
+    }, {
+      name: 'e',
+      type: null
+    }],
+    returns: null
+  }, {
+    name: 'handleDayMouseEnter',
+    docblock: null,
+    modifiers: [],
+    params: [{
+      name: 'day',
+      type: null
+    }, {
+      name: 'modifiers',
+      type: null
+    }, {
+      name: 'e',
+      type: null
+    }],
+    returns: null
+  }, {
+    name: 'handleDayMouseLeave',
+    docblock: null,
+    modifiers: [],
+    params: [{
+      name: 'day',
+      type: null
+    }, {
+      name: 'modifiers',
+      type: null
+    }, {
+      name: 'e',
+      type: null
+    }],
+    returns: null
+  }, {
+    name: 'handleDayTouchStart',
+    docblock: null,
+    modifiers: [],
+    params: [{
+      name: 'day',
+      type: null
+    }, {
+      name: 'modifiers',
+      type: null
+    }, {
+      name: 'e',
+      type: null
+    }],
+    returns: null
+  }, {
+    name: 'handleDayTouchEnd',
+    docblock: null,
+    modifiers: [],
+    params: [{
+      name: 'day',
+      type: null
+    }, {
+      name: 'modifiers',
+      type: null
+    }, {
+      name: 'e',
+      type: null
+    }],
+    returns: null
+  }, {
+    name: 'handleDayTouchTap',
+    docblock: null,
+    modifiers: [],
+    params: [{
+      name: 'day',
+      type: null
+    }, {
+      name: 'modifiers',
+      type: null
+    }, {
+      name: 'e',
+      type: null
+    }],
+    returns: null
+  }],
+  props: {
+    day: {
+      type: {
+        name: 'custom',
+        raw: 'momentPropTypes.momentObj'
+      },
+      required: false,
+      description: '',
+      defaultValue: {
+        value: 'moment()',
+        computed: true
+      }
+    },
+    modifiers: {
+      type: {
+        name: 'arrayOf',
+        value: {
+          name: 'string'
+        }
+      },
+      required: false,
+      description: '',
+      defaultValue: {
+        value: '[]',
+        computed: false
+      }
+    },
+    onDayClick: {
+      type: {
+        name: 'func'
+      },
+      required: false,
+      description: '',
+      defaultValue: {
+        value: 'function() {}',
+        computed: false
+      }
+    },
+    onDayMouseDown: {
+      type: {
+        name: 'func'
+      },
+      required: false,
+      description: '',
+      defaultValue: {
+        value: 'function() {}',
+        computed: false
+      }
+    },
+    onDayMouseUp: {
+      type: {
+        name: 'func'
+      },
+      required: false,
+      description: '',
+      defaultValue: {
+        value: 'function() {}',
+        computed: false
+      }
+    },
+    onDayMouseEnter: {
+      type: {
+        name: 'func'
+      },
+      required: false,
+      description: '',
+      defaultValue: {
+        value: 'function() {}',
+        computed: false
+      }
+    },
+    onDayMouseLeave: {
+      type: {
+        name: 'func'
+      },
+      required: false,
+      description: '',
+      defaultValue: {
+        value: 'function() {}',
+        computed: false
+      }
+    },
+    onDayTouchStart: {
+      type: {
+        name: 'func'
+      },
+      required: false,
+      description: '',
+      defaultValue: {
+        value: 'function() {}',
+        computed: false
+      }
+    },
+    onDayTouchEnd: {
+      type: {
+        name: 'func'
+      },
+      required: false,
+      description: '',
+      defaultValue: {
+        value: 'function() {}',
+        computed: false
+      }
+    },
+    onDayTouchTap: {
+      type: {
+        name: 'func'
+      },
+      required: false,
+      description: '',
+      defaultValue: {
+        value: 'function() {}',
+        computed: false
+      }
+    }
+  }
+};
