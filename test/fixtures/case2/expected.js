@@ -51,4 +51,16 @@ ErrorBox.propTypes = {
 };
 
 exports.default = ErrorBox;
-ErrorBox.__docgenInfo = '{"description":"","methods":[],"props":{"children":{"type":{"name":"node"},"required":true,"description":""}}}';
+ErrorBox.__docgenInfo = {
+  description: '',
+  methods: [],
+  props: {
+    children: {
+      type: {
+        name: 'node'
+      },
+      required: true,
+      description: ''
+    }
+  }
+};
