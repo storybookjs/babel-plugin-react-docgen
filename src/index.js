@@ -1,17 +1,9 @@
 import * as _ from 'lodash';
 import * as reactDocs from 'react-docgen';
+import isReactComponentClass from './isReactComponentClass';
 import * as p from 'path';
 
 export default function({types: t}) {
-  function isReactLikeClass(node) {
-    return !!_.find(node.body.body, classMember => {
-      return (
-        t.isClassMethod(classMember) &&
-          t.isIdentifier(classMember.key, { name: 'render' })
-      );
-    });
-  }
-
   return {
     visitor: {
       Class(path, state) {
@@ -20,11 +12,13 @@ export default function({types: t}) {
           scope,
         } = path;
 
-        if(isReactLikeClass(node)){
+        if(isReactComponentClass(path)){
           injectReactDocgenInfo(path, this.file.code, t);
           injectDocgenGlobal(path, state, t);
         }
-      }
+      },
+      'FunctionDeclaration|FunctionExpression|ArrowFunctionExpression'(path) {
+      },
     }
   };
 }
