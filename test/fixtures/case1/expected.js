@@ -423,9 +423,9 @@ CalendarDay.__docgenInfo = {
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
-  STORYBOOK_REACT_CLASSES.push({
+  STORYBOOK_REACT_CLASSES['test/fixtures/case1/actual.js'] = {
     name: 'CalendarDay',
     docgenInfo: CalendarDay.__docgenInfo,
     path: 'test/fixtures/case1/actual.js'
-  });
+  };
 }
