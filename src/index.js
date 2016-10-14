@@ -46,6 +46,7 @@ function injectDocgenGlobal(path, state, t) {
   }
   const globalName = state.opts.DOC_GEN_GLOBAL;
   const className = path.node.id.name;
+  const filePath = p.relative('./', p.resolve('./', path.hub.file.opts.filename));
   const globalNode = t.ifStatement(
     t.binaryExpression(
       '!==',
@@ -57,30 +58,30 @@ function injectDocgenGlobal(path, state, t) {
     ),
     t.blockStatement([
       t.expressionStatement(
-        t.callExpression(
+        t.assignmentExpression(
+          '=',
           t.memberExpression(
             t.identifier(globalName),
-            t.identifier('push')
+            t.stringLiteral(filePath),
+            true
           ),
-          [
-            t.objectExpression([
-              t.objectProperty(
-                t.identifier('name'),
-                t.stringLiteral(className)
-              ),
-              t.objectProperty(
-                t.identifier('docgenInfo'),
-                t.memberExpression(
-                  t.identifier(className),
-                  t.identifier('__docgenInfo')
-                )
-              ),
-              t.objectProperty(
-                t.identifier('path'),
-                t.stringLiteral(p.relative('./', p.resolve('./', path.hub.file.opts.filename)))
+          t.objectExpression([
+            t.objectProperty(
+              t.identifier('name'),
+              t.stringLiteral(className)
+            ),
+            t.objectProperty(
+              t.identifier('docgenInfo'),
+              t.memberExpression(
+                t.identifier(className),
+                t.identifier('__docgenInfo')
               )
-            ])
-          ]
+            ),
+            t.objectProperty(
+              t.identifier('path'),
+              t.stringLiteral(filePath)
+            )
+          ])
         )
       )
     ])
