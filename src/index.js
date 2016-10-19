@@ -15,7 +15,12 @@ export default function ({types: t}) {
       },
       'FunctionDeclaration|FunctionExpression|ArrowFunctionExpression'(path, state) {
         if(isStatelessComponent(path)) {
-          const className = path.parentPath.node.id.name;
+          let className = '';
+          if(path.parentPath.node.id) {
+            className = path.parentPath.node.id.name;
+          } else {
+            return;
+          }
           injectReactDocgenInfo(className, path, state, this.file.code, t);
         }
       },
@@ -43,7 +48,13 @@ function injectReactDocgenInfo(className, path, state, code, t) {
     return;
   }
 
-  const docObj = reactDocs.parse(code);
+  let docObj = {};
+  try {
+    docObj = reactDocs.parse(code);
+  } catch(e) {
+    return;
+  }
+
   const docNode = buildObjectExpression(docObj, t);
   const docgenInfo = t.expressionStatement(
     t.assignmentExpression(
