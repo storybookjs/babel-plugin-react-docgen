@@ -42,3 +42,8 @@ require("babel-core").transform("code", {
 ```
 "plugins":[["babel-plugin-react-docgen", {"DOC_GEN_GLOBAL": "<your global name>"}]]
 ```
+* And you should also insert following lines in `.storybook/config.js`
+```
+window.<your global name> = {};
+```
+* There is a sample code at (https://github.com/kadira-samples/react-docgen-sample)
