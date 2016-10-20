@@ -1,57 +1,79 @@
 import * as _ from 'lodash';
 import * as reactDocs from 'react-docgen';
+import isReactComponentClass from './isReactComponentClass';
+import isStatelessComponent from './isStatelessComponent';
 import * as p from 'path';
 
-export default function({types: t}) {
-  function isReactLikeClass(node) {
-    return !!_.find(node.body.body, classMember => {
-      return (
-        t.isClassMethod(classMember) &&
-          t.isIdentifier(classMember.key, { name: 'render' })
-      );
-    });
-  }
-
+export default function ({types: t}) {
   return {
     visitor: {
       Class(path, state) {
-        const {
-          node,
-          scope,
-        } = path;
-
-        if(isReactLikeClass(node)){
-          injectReactDocgenInfo(path, this.file.code, t);
-          injectDocgenGlobal(path, state, t);
+        if(isReactComponentClass(path)) {
+          const className = path.node.id.name;
+          injectReactDocgenInfo(className, path, state, this.file.code, t);
         }
-      }
+      },
+      'FunctionDeclaration|FunctionExpression|ArrowFunctionExpression'(path, state) {
+        if(isStatelessComponent(path)) {
+          let className = '';
+          if(path.parentPath.node.id) {
+            className = path.parentPath.node.id.name;
+          } else {
+            return;
+          }
+          injectReactDocgenInfo(className, path, state, this.file.code, t);
+        }
+      },
     }
   };
 }
 
+function alreadyVisited(program, t) {
+  return program.node.body.some(node => {
+    if(t.isExpressionStatement(node) &&
+       t.isAssignmentExpression(node.expression) &&
+       t.isMemberExpression(node.expression.left)
+      ) {
+      return node.expression.left.property.name === '__docgenInfo';
+    }
+    return false;
+  });
+}
 
-function injectReactDocgenInfo(path, code, t) {
-  if(!t.isProgram(path.parentPath.node)) {
+
+function injectReactDocgenInfo(className, path, state, code, t) {
+  const program = path.scope.getProgramParent().path;
+
+  if(alreadyVisited(program, t)) {
     return;
   }
-  const docObj = reactDocs.parse(code);
+
+  let docObj = {};
+  try {
+    docObj = reactDocs.parse(code);
+  } catch(e) {
+    return;
+  }
+
   const docNode = buildObjectExpression(docObj, t);
   const docgenInfo = t.expressionStatement(
     t.assignmentExpression(
       "=",
-      t.memberExpression(t.identifier(path.node.id.name), t.identifier('__docgenInfo')),
+      t.memberExpression(t.identifier(className), t.identifier('__docgenInfo')),
       docNode
     ));
-  path.parentPath.pushContainer('body', docgenInfo);
-
+  program.pushContainer('body', docgenInfo);
+  injectDocgenGlobal(className, path, state, t);
 }
 
-function injectDocgenGlobal(path, state, t) {
-  if(!state.opts.DOC_GEN_GLOBAL || !t.isProgram(path.parentPath.node)) {
+function injectDocgenGlobal(className, path, state, t) {
+  const program = path.scope.getProgramParent().path;
+
+  if(!state.opts.DOC_GEN_GLOBAL) {
     return;
   }
+
   const globalName = state.opts.DOC_GEN_GLOBAL;
-  const className = path.node.id.name;
   const filePath = p.relative('./', p.resolve('./', path.hub.file.opts.filename));
   const globalNode = t.ifStatement(
     t.binaryExpression(
@@ -92,7 +114,7 @@ function injectDocgenGlobal(path, state, t) {
       )
     ])
   );
-  path.parentPath.pushContainer('body', globalNode);
+  program.pushContainer('body', globalNode);
 }
 
 function buildObjectExpression(obj, t){
@@ -115,7 +137,7 @@ function buildObjectExpression(obj, t){
     return t.numericLiteral(obj);
   } else if (_.isArray(obj)) {
     const children = [];
-    obj.forEach(function(val) {
+    obj.forEach(function (val) {
       children.push(buildObjectExpression(val, t));
     });
     return t.ArrayExpression(children);

@@ -26,8 +26,9 @@
   ],
   "dependencies": {
     "babel-preset-react": "6.x.x",
+    "babel-types": "^6.16.0",
     "lodash": "4.x.x",
     "react-docgen": "2.x.x"
   },
-  "license" : "MIT"
+  "license": "MIT"
 }
