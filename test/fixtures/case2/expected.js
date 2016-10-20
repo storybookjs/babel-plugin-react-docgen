@@ -53,7 +53,6 @@ ErrorBox.propTypes = {
 exports.default = ErrorBox;
 ErrorBox.__docgenInfo = {
   description: '',
-  methods: [],
   props: {
     children: {
       type: {
