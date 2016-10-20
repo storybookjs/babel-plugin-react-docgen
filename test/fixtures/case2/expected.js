@@ -64,3 +64,11 @@ ErrorBox.__docgenInfo = {
     }
   }
 };
+
+if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
+  STORYBOOK_REACT_CLASSES['test/fixtures/case2/actual.js'] = {
+    name: 'ErrorBox',
+    docgenInfo: ErrorBox.__docgenInfo,
+    path: 'test/fixtures/case2/actual.js'
+  };
+}

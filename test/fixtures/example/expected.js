@@ -72,3 +72,11 @@ App.__docgenInfo = {
   description: '',
   methods: []
 };
+
+if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
+  STORYBOOK_REACT_CLASSES['test/fixtures/example/actual.js'] = {
+    name: 'App',
+    docgenInfo: App.__docgenInfo,
+    path: 'test/fixtures/example/actual.js'
+  };
+}

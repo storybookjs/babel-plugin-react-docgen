@@ -20,11 +20,14 @@ describe('Add propType doc to react classes', () => {
           "es2015",
         ],
         plugins: [
-          plugin
+          [plugin, {
+            "DOC_GEN_GLOBAL": "STORYBOOK_REACT_CLASSES"
+          }]
         ],
         babelrc: false
       };
       const actual = transformFileSync(actualPath, options).code;
+      //fs.writeFileSync(path.join(fixtureDir, 'actual-output.js'), actual);
       const expected = fs.readFileSync(
           path.join(fixtureDir, 'expected.js')
       ).toString();

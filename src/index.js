@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import * as reactDocs from 'react-docgen';
+import * as p from 'path';
 
 export default function({types: t}) {
   function isReactLikeClass(node) {
@@ -13,7 +14,7 @@ export default function({types: t}) {
 
   return {
     visitor: {
-      Class(path) {
+      Class(path, state) {
         const {
           node,
           scope,
@@ -21,6 +22,7 @@ export default function({types: t}) {
 
         if(isReactLikeClass(node)){
           injectReactDocgenInfo(path, this.file.code, t);
+          injectDocgenGlobal(path, state, t);
         }
       }
     }
@@ -33,13 +35,64 @@ function injectReactDocgenInfo(path, code, t) {
     return;
   }
   const docObj = reactDocs.parse(code);
+  const docNode = buildObjectExpression(docObj, t);
   const docgenInfo = t.expressionStatement(
     t.assignmentExpression(
       "=",
       t.memberExpression(t.identifier(path.node.id.name), t.identifier('__docgenInfo')),
-      buildObjectExpression(docObj, t)
+      docNode
     ));
-  path.parentPath.pushContainer("body", docgenInfo);
+  path.parentPath.pushContainer('body', docgenInfo);
+
+}
+
+function injectDocgenGlobal(path, state, t) {
+  if(!state.opts.DOC_GEN_GLOBAL || !t.isProgram(path.parentPath.node)) {
+    return;
+  }
+  const globalName = state.opts.DOC_GEN_GLOBAL;
+  const className = path.node.id.name;
+  const filePath = p.relative('./', p.resolve('./', path.hub.file.opts.filename));
+  const globalNode = t.ifStatement(
+    t.binaryExpression(
+      '!==',
+      t.unaryExpression(
+        'typeof',
+        t.identifier(globalName)
+      ),
+      t.stringLiteral('undefined')
+    ),
+    t.blockStatement([
+      t.expressionStatement(
+        t.assignmentExpression(
+          '=',
+          t.memberExpression(
+            t.identifier(globalName),
+            t.stringLiteral(filePath),
+            true
+          ),
+          t.objectExpression([
+            t.objectProperty(
+              t.identifier('name'),
+              t.stringLiteral(className)
+            ),
+            t.objectProperty(
+              t.identifier('docgenInfo'),
+              t.memberExpression(
+                t.identifier(className),
+                t.identifier('__docgenInfo')
+              )
+            ),
+            t.objectProperty(
+              t.identifier('path'),
+              t.stringLiteral(filePath)
+            )
+          ])
+        )
+      )
+    ])
+  );
+  path.parentPath.pushContainer('body', globalNode);
 }
 
 function buildObjectExpression(obj, t){
