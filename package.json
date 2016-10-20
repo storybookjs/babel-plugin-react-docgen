@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "@kadira/babel-plugin-react-docgen",
   "description": "Add propType doc to react classes",
   "repository": "https://github.com/kadirahq/babel-plugin-react-docgen",

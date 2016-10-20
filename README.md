@@ -5,7 +5,7 @@ Add propType doc to react classes
 ## Installation
 
 ```sh
-$ npm install @kadira/babel-plugin-react-docgen
+$ npm install babel-plugin-react-docgen
 ```
 
 ## Usage
@@ -16,21 +16,21 @@ $ npm install @kadira/babel-plugin-react-docgen
 
 ```json
 {
-  "plugins": ["@kadira/babel-plugin-react-docgen"]
+  "plugins": ["babel-plugin-react-docgen"]
 }
 ```
 
 ### Via CLI
 
 ```sh
-$ babel --plugins @kadira/babel-plugin-react-docgen script.js
+$ babel --plugins babel-plugin-react-docgen script.js
 ```
 
 ### Via Node API
 
 ```javascript
 require("babel-core").transform("code", {
-  plugins: ["@kadira/babel-plugin-react-docgen"]
+  plugins: ["babel-plugin-react-docgen"]
 });
 ```
 
@@ -38,4 +38,7 @@ require("babel-core").transform("code", {
 
 * React class information is avalable via `<ClassName>.__docgenInfo` as a JSON parsabel string.
 * This plugin uses `react-docgen` under the hood, so every [limitation](https://github.com/reactjs/react-docgen#guidelines-for-default-resolvers-and-handlers) it has, applies.
-* Only works classes extended from `React.Component` with a `render()` method. `React.createClass` and stateless components are not supported yet.
+* If you need a global object with all the react component docs, set plugin options like this in `.babelrc` (replace <your global name> with variable name you want)
+```
+"plugins":[["babel-plugin-react-docgen", {"DOC_GEN_GLOBAL": "<your global name>"}]]
+```
