@@ -38,7 +38,33 @@ You can access all these information right inside your app:
 ```js
 console.log(Button.__docgenInfo);
 ```
+<details>
+  <summary>Click to see the output</summary>
 
+  ```js
+  {
+    description: 'This is an awesome looking button for React',
+    props: {
+      label: {
+        type: {
+          name: 'string'
+        },
+        required: false,
+        description: 'Label for the button'
+      },
+      onClick: {
+        type: {
+          name: 'func'
+        },
+        required: false,
+        description: 'Triggered when clicked on the button'
+      }
+    }
+  }
+  ```
+</details>
+
+<br />
 This will be pretty useful for documentations and some other React devtools.
 
 ## Usage
@@ -56,11 +82,6 @@ Use it inside your `.babelrc`
   "plugins": ["react-docgen"]
 }
 ```
-
-<details>
-  <summary>Show/Hide me</summary>
-  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-</details>
 
 ## TODO:
 
