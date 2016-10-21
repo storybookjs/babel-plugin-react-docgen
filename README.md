@@ -1,40 +1,69 @@
 # babel-plugin-react-docgen
 
-Add propType doc to react classes
+React Docgen allows us to write propType descriptions, class descriptions and access propType metadata and use it anyway we like.
+This babel plugin allow you to access those info automatically right inside your React class.
 
-## Installation
+For an example, let's say you've a React class like this:
 
-```sh
-$ npm install babel-plugin-react-docgen
+```js
+/**
+  This is an awesome looking button for React
+*/
+import React from 'react';
+
+class Button extends React.Component {
+  render() {
+    const { label, onClick } = this.props;
+    return (
+      <button onClick={onClick}>{ label }</button>
+    );
+  }
+}
+
+Button.propTypes = {
+  /**
+    Label for the button
+  */
+  label: React.PropTypes.string,
+
+  /**
+    Triggered when clicked on the button
+  */
+  onClick: React.PropTypes.func,
+};
 ```
+
+You can access all these information right inside your app:
+
+```js
+console.log(Button.__docgenInfo);
+```
+
+This will be pretty useful for documentations and some other React devtools.
 
 ## Usage
 
-### Via `.babelrc` (Recommended)
+Install the plugin:
 
-**.babelrc**
+```sh
+$ npm install -D babel-plugin-react-docgen
+```
+
+Use it inside your `.babelrc`
 
 ```json
 {
-  "plugins": ["babel-plugin-react-docgen"]
+  "plugins": ["react-docgen"]
 }
 ```
 
-### Via CLI
+## TODO:
 
-```sh
-$ babel --plugins babel-plugin-react-docgen script.js
-```
+* Change DOC_GEN_GLOBAL into something else into DOC_GEN_COLLECTION_NAME
+* Add a guide for DOC_GEN_GLOBAL
+* Add some notes (like the usage, performance, file size, devtime use)
 
-### Via Node API
 
-```javascript
-require("babel-core").transform("code", {
-  plugins: ["babel-plugin-react-docgen"]
-});
-```
-
-## Guide
 
 * React class information is avalable via `<ClassName>.__docgenInfo` as a JSON parsabel string.
 * This plugin uses `react-docgen` under the hood, so every [limitation](https://github.com/reactjs/react-docgen#guidelines-for-default-resolvers-and-handlers) it has, applies.
