@@ -76,11 +76,11 @@ function injectReactDocgenInfo(className, path, state, code, t) {
 function injectDocgenGlobal(className, path, state, t) {
   const program = path.scope.getProgramParent().path;
 
-  if(!state.opts.DOC_GEN_GLOBAL) {
+  if(!state.opts.DOC_GEN_COLLECTION_NAME) {
     return;
   }
 
-  const globalName = state.opts.DOC_GEN_GLOBAL;
+  const globalName = state.opts.DOC_GEN_COLLECTION_NAME;
   const filePath = p.relative('./', p.resolve('./', path.hub.file.opts.filename));
   const globalNode = t.ifStatement(
     t.binaryExpression(
