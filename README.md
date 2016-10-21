@@ -57,6 +57,11 @@ Use it inside your `.babelrc`
 }
 ```
 
+<details>
+  <summary>Show/Hide me</summary>
+  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+</details>
+
 ## TODO:
 
 * Change DOC_GEN_GLOBAL into something else into DOC_GEN_COLLECTION_NAME
