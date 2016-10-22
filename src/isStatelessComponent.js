@@ -1,4 +1,4 @@
-// This is taked from the oliviertassinari/babel-plugin-transform-react-remove-prop-types
+// This is taken from the oliviertassinari/babel-plugin-transform-react-remove-prop-types
 // See: https://git.io/vPHoh
 
 function isJSXElementOrReactCreateElement(node) {
