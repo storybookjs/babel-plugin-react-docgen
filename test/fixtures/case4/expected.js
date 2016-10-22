@@ -65,7 +65,11 @@ Button.__docgenInfo = {
         name: 'object'
       },
       required: false,
-      description: ''
+      description: '',
+      defaultValue: {
+        value: '{}',
+        computed: false
+      }
     }
   }
 };
