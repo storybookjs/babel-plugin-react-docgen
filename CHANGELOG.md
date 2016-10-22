@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.3.1
+21-October-2016
+
+Update the `react-docgen` NPM module to the latest as they [fixed](https://github.com/reactjs/react-docgen/issues/131) the bug related to default values.
+
 ### v1.3.0
 20-October-2016
 
