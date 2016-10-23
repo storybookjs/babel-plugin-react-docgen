@@ -1,6 +1,11 @@
 # ChangeLog
 
 ### v1.3.1
+23-October-2016
+
+* Restrict JSX lookup only for direct JSX returns. [PR15](https://github.com/kadirahq/babel-plugin-react-docgen/pull/15)
+
+### v1.3.1
 21-October-2016
 
 Update the `react-docgen` NPM module to the latest as they [fixed](https://github.com/reactjs/react-docgen/issues/131) the bug related to default values.
