@@ -29,6 +29,9 @@ function isReturningJSXElement(path) {
 
   let visited = false;
 
+  /**
+    Looking for functions returning a JSX.
+  */
   path.traverse({
     ReturnStatement(path2) {
       // We have already found what we are looking for.
@@ -52,7 +55,12 @@ function isReturningJSXElement(path) {
         const name = argument.get('callee').node.name;
         const binding = path.scope.getBinding(name);
 
-        if (!binding) {
+        // Here we do not check for any function calles except `_possibleConstructorReturn`.
+        // That's because we only need to check if the function returning JSX elements right away.
+        // We don't need to check any other function calls which generate JSX.
+        // TODO: between babel versions `_possibleConstructorReturn` name could get changed.
+        // So, we need to look at it a bit.
+        if (!binding || name != '_possibleConstructorReturn') {
           return;
         }
 
