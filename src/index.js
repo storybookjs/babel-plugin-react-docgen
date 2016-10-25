@@ -8,24 +8,46 @@ export default function ({types: t}) {
   return {
     visitor: {
       Class(path, state) {
-        if(isReactComponentClass(path)) {
-          const className = path.node.id.name;
-          injectReactDocgenInfo(className, path, state, this.file.code, t);
+        if(!isReactComponentClass(path)) {
+          return;
         }
+        const className = path.node.id.name;
+
+        if(!isExported(path, className, t)){
+          return;
+        }
+        injectReactDocgenInfo(className, path, state, this.file.code, t);
       },
       'FunctionDeclaration|FunctionExpression|ArrowFunctionExpression'(path, state) {
-        if(isStatelessComponent(path)) {
-          let className = '';
-          if(path.parentPath.node.id) {
-            className = path.parentPath.node.id.name;
-          } else {
-            return;
-          }
-          injectReactDocgenInfo(className, path, state, this.file.code, t);
+        if(!isStatelessComponent(path)) {
+          return;
         }
+        if(!path.parentPath.node.id) {
+          return;
+        }
+        const className = path.parentPath.node.id.name;
+
+        if(!isExported(path, className, t)) {
+          return;
+        }
+        injectReactDocgenInfo(className, path, state, this.file.code, t);
       },
     }
   };
+}
+
+function isExported(path, className, t){
+  const types = [
+    'ExportDeclaration',
+    'ExportNamedDeclaration',
+    'ExportDefaultDeclaration'
+  ];
+  const program = path.scope.getProgramParent().path;
+  return program.get('body').some(path=>{
+    if(types.some(type=> type == path.node.type)) {
+      return className === path.node.declaration.name;
+    }
+  });
 }
 
 function alreadyVisited(program, t) {
