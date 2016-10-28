@@ -30,11 +30,13 @@ export default function ({types: t}) {
 
 function alreadyVisited(program, t) {
   return program.node.body.some(node => {
-    if(t.isExpressionStatement(node) &&
-       t.isAssignmentExpression(node.expression) &&
-       t.isMemberExpression(node.expression.left)
+    if(t.isIfStatement(node) &&
+       t.isBlockStatement(node.consequent) &&
+       t.isExpressionStatement(node.consequent.body[0]) &&
+       t.isAssignmentExpression(node.consequent.body[0].expression) &&
+       t.isMemberExpression(node.consequent.body[0].expression.left)
       ) {
-      return node.expression.left.property.name === '__docgenInfo';
+      return node.consequent.body[0].expression.left.property.name === '__docgenInfo';
     }
     return false;
   });
@@ -63,12 +65,23 @@ function injectReactDocgenInfo(className, path, state, code, t) {
   }
 
   const docNode = buildObjectExpression(docObj, t);
-  const docgenInfo = t.expressionStatement(
-    t.assignmentExpression(
-      "=",
-      t.memberExpression(t.identifier(className), t.identifier('__docgenInfo')),
-      docNode
-    ));
+  const docgenInfo =  t.ifStatement(
+    t.binaryExpression(
+      '!==',
+      t.unaryExpression(
+        'typeof',
+        t.identifier(className)
+      ),
+      t.stringLiteral('undefined')
+    ),
+    t.blockStatement([
+      t.expressionStatement(
+        t.assignmentExpression(
+          "=",
+          t.memberExpression(t.identifier(className), t.identifier('__docgenInfo')),
+          docNode
+        ))
+    ]));
   program.pushContainer('body', docgenInfo);
   injectDocgenGlobal(className, path, state, t);
 }
