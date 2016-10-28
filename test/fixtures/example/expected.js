@@ -68,9 +68,12 @@ var App = function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-App.__docgenInfo = {
-  description: ''
-};
+
+if (typeof App !== 'undefined') {
+  App.__docgenInfo = {
+    description: ''
+  };
+}
 
 if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
   STORYBOOK_REACT_CLASSES['test/fixtures/example/actual.js'] = {
