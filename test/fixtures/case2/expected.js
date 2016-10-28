@@ -51,18 +51,21 @@ ErrorBox.propTypes = {
 };
 
 exports.default = ErrorBox;
-ErrorBox.__docgenInfo = {
-  description: '',
-  props: {
-    children: {
-      type: {
-        name: 'node'
-      },
-      required: true,
-      description: ''
+
+if (typeof ErrorBox !== 'undefined') {
+  ErrorBox.__docgenInfo = {
+    description: '',
+    props: {
+      children: {
+        type: {
+          name: 'node'
+        },
+        required: true,
+        description: ''
+      }
     }
-  }
-};
+  };
+}
 
 if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
   STORYBOOK_REACT_CLASSES['test/fixtures/case2/actual.js'] = {

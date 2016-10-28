@@ -133,9 +133,9 @@ var CalendarDay = function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      var _props = this.props;
-      var day = _props.day;
-      var modifiers = _props.modifiers;
+      var _props = this.props,
+          day = _props.day,
+          modifiers = _props.modifiers;
 
 
       return _react2.default.createElement(
@@ -181,125 +181,128 @@ exports.default = CalendarDay;
 
 CalendarDay.propTypes = propTypes;
 CalendarDay.defaultProps = defaultProps;
-CalendarDay.__docgenInfo = {
-  description: '',
-  props: {
-    day: {
-      type: {
-        name: 'custom',
-        raw: 'momentPropTypes.momentObj'
-      },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'moment()',
-        computed: true
-      }
-    },
-    modifiers: {
-      type: {
-        name: 'arrayOf',
-        value: {
-          name: 'string'
+
+if (typeof CalendarDay !== 'undefined') {
+  CalendarDay.__docgenInfo = {
+    description: '',
+    props: {
+      day: {
+        type: {
+          name: 'custom',
+          raw: 'momentPropTypes.momentObj'
+        },
+        required: false,
+        description: '',
+        defaultValue: {
+          value: 'moment()',
+          computed: true
         }
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: '[]',
-        computed: false
-      }
-    },
-    onDayClick: {
-      type: {
-        name: 'func'
+      modifiers: {
+        type: {
+          name: 'arrayOf',
+          value: {
+            name: 'string'
+          }
+        },
+        required: false,
+        description: '',
+        defaultValue: {
+          value: '[]',
+          computed: false
+        }
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
-      }
-    },
-    onDayMouseDown: {
-      type: {
-        name: 'func'
+      onDayClick: {
+        type: {
+          name: 'func'
+        },
+        required: false,
+        description: '',
+        defaultValue: {
+          value: 'function() {}',
+          computed: false
+        }
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
-      }
-    },
-    onDayMouseUp: {
-      type: {
-        name: 'func'
+      onDayMouseDown: {
+        type: {
+          name: 'func'
+        },
+        required: false,
+        description: '',
+        defaultValue: {
+          value: 'function() {}',
+          computed: false
+        }
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
-      }
-    },
-    onDayMouseEnter: {
-      type: {
-        name: 'func'
+      onDayMouseUp: {
+        type: {
+          name: 'func'
+        },
+        required: false,
+        description: '',
+        defaultValue: {
+          value: 'function() {}',
+          computed: false
+        }
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
-      }
-    },
-    onDayMouseLeave: {
-      type: {
-        name: 'func'
+      onDayMouseEnter: {
+        type: {
+          name: 'func'
+        },
+        required: false,
+        description: '',
+        defaultValue: {
+          value: 'function() {}',
+          computed: false
+        }
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
-      }
-    },
-    onDayTouchStart: {
-      type: {
-        name: 'func'
+      onDayMouseLeave: {
+        type: {
+          name: 'func'
+        },
+        required: false,
+        description: '',
+        defaultValue: {
+          value: 'function() {}',
+          computed: false
+        }
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
-      }
-    },
-    onDayTouchEnd: {
-      type: {
-        name: 'func'
+      onDayTouchStart: {
+        type: {
+          name: 'func'
+        },
+        required: false,
+        description: '',
+        defaultValue: {
+          value: 'function() {}',
+          computed: false
+        }
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
-      }
-    },
-    onDayTouchTap: {
-      type: {
-        name: 'func'
+      onDayTouchEnd: {
+        type: {
+          name: 'func'
+        },
+        required: false,
+        description: '',
+        defaultValue: {
+          value: 'function() {}',
+          computed: false
+        }
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
+      onDayTouchTap: {
+        type: {
+          name: 'func'
+        },
+        required: false,
+        description: '',
+        defaultValue: {
+          value: 'function() {}',
+          computed: false
+        }
       }
     }
-  }
-};
+  };
+}
 
 if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
   STORYBOOK_REACT_CLASSES['test/fixtures/case1/actual.js'] = {
