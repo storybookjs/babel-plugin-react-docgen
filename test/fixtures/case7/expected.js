@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.First = undefined;
 
 var _react = require('react');
 
@@ -32,7 +33,7 @@ First.propTypes = {
   children: _react.PropTypes.node
 };
 
-exports.default = First;
+exports.First = First;
 First.__docgenInfo = {
   description: '',
   props: {
@@ -47,9 +48,9 @@ First.__docgenInfo = {
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
-  STORYBOOK_REACT_CLASSES['test/fixtures/case5/actual.js'] = {
+  STORYBOOK_REACT_CLASSES['test/fixtures/case7/actual.js'] = {
     name: 'First',
     docgenInfo: First.__docgenInfo,
-    path: 'test/fixtures/case5/actual.js'
+    path: 'test/fixtures/case7/actual.js'
   };
 }

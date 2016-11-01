@@ -38,15 +38,25 @@ export default function ({types: t}) {
 
 function isExported(path, className, t){
   const types = [
-    'ExportDeclaration',
-    'ExportNamedDeclaration',
-    'ExportDefaultDeclaration'
+    'ExportDefaultDeclaration',
+    'ExportNamedDeclaration'
   ];
+
+  if(path.parentPath.node &&
+     types.some(type => {return path.parentPath.node.type === type;})) {
+    return true;
+  }
+
   const program = path.scope.getProgramParent().path;
-  return program.get('body').some(path=>{
-    if(types.some(type=> type == path.node.type)) {
+  return program.get('body').some(path => {
+    if(path.node.type === 'ExportNamedDeclaration' &&
+       path.node.specifiers &&
+       path.node.specifiers.length) {
+      return className === path.node.specifiers[0].exported.name;
+    } else if(path.node.type === 'ExportDefaultDeclaration') {
       return className === path.node.declaration.name;
     }
+    return false;
   });
 }
 
