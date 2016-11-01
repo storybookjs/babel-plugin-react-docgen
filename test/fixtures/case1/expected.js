@@ -133,9 +133,9 @@ var CalendarDay = function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      var _props = this.props;
-      var day = _props.day;
-      var modifiers = _props.modifiers;
+      var _props = this.props,
+          day = _props.day,
+          modifiers = _props.modifiers;
 
 
       return _react2.default.createElement(

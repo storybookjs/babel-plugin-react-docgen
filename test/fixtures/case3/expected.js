@@ -11,10 +11,10 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Button = function Button(_ref) {
-  var children = _ref.children;
-  var onClick = _ref.onClick;
-  var _ref$style = _ref.style;
-  var style = _ref$style === undefined ? {} : _ref$style;
+  var children = _ref.children,
+      onClick = _ref.onClick,
+      _ref$style = _ref.style,
+      style = _ref$style === undefined ? {} : _ref$style;
   return _react2.default.createElement(
     'button',
     {
