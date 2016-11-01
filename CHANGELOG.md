@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.4.0
+01-November-2016
+
+Handle multiple components in the same file by checking with exported classes. [PR17](https://github.com/kadirahq/babel-plugin-react-docgen/pull/17)
+
 ### v1.3.1
 23-October-2016
 
