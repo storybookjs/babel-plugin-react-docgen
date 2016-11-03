@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.4.1
+03-November-2016
+
+Fixes [#19](https://github.com/kadirahq/babel-plugin-react-docgen/pull/20)
+
 ### v1.4.0
 01-November-2016
 
