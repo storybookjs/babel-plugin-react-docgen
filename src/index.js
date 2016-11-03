@@ -11,6 +11,9 @@ export default function ({types: t}) {
         if(!isReactComponentClass(path)) {
           return;
         }
+        if(!path.node.id){
+          return;
+        }
         const className = path.node.id.name;
 
         if(!isExported(path, className, t)){
