@@ -163,7 +163,7 @@ function buildObjectExpression(obj, t){
   if(_.isPlainObject(obj)) {
     const children = [];
     for (let key in obj) {
-      if(!obj.hasOwnProperty(key) || _.isUndefined(obj[key])) continue;
+      if(!obj.hasOwnProperty(key) || _.isUndefined(obj[key]) || key === 'methods') continue;
       children.push(
         t.objectProperty(
           t.identifier(key),
