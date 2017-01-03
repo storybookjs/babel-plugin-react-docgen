@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.4.2
+03-January-2017
+
+Add support for hypen propTypes.
+
 ### v1.4.1
 03-November-2016
 
