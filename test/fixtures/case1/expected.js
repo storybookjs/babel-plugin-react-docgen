@@ -43,7 +43,8 @@ var propTypes = {
   onDayMouseLeave: _react.PropTypes.func,
   onDayTouchStart: _react.PropTypes.func,
   onDayTouchEnd: _react.PropTypes.func,
-  onDayTouchTap: _react.PropTypes.func
+  onDayTouchTap: _react.PropTypes.func,
+  'hypen-dash': _react.PropTypes.string
 };
 
 var defaultProps = {
@@ -56,7 +57,9 @@ var defaultProps = {
   onDayMouseLeave: function onDayMouseLeave() {},
   onDayTouchStart: function onDayTouchStart() {},
   onDayTouchEnd: function onDayTouchEnd() {},
-  onDayTouchTap: function onDayTouchTap() {}
+  onDayTouchTap: function onDayTouchTap() {},
+
+  'hypen-dash': 'hello'
 };
 
 var CalendarDay = function (_React$Component) {
@@ -182,120 +185,131 @@ exports.default = CalendarDay;
 CalendarDay.propTypes = propTypes;
 CalendarDay.defaultProps = defaultProps;
 CalendarDay.__docgenInfo = {
-  description: '',
-  props: {
-    day: {
-      type: {
-        name: 'custom',
-        raw: 'momentPropTypes.momentObj'
+  'description': '',
+  'props': {
+    'day': {
+      'type': {
+        'name': 'custom',
+        'raw': 'momentPropTypes.momentObj'
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'moment()',
-        computed: true
+      'required': false,
+      'description': '',
+      'defaultValue': {
+        'value': 'moment()',
+        'computed': true
       }
     },
-    modifiers: {
-      type: {
-        name: 'arrayOf',
-        value: {
-          name: 'string'
+    'modifiers': {
+      'type': {
+        'name': 'arrayOf',
+        'value': {
+          'name': 'string'
         }
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: '[]',
-        computed: false
+      'required': false,
+      'description': '',
+      'defaultValue': {
+        'value': '[]',
+        'computed': false
       }
     },
-    onDayClick: {
-      type: {
-        name: 'func'
+    'onDayClick': {
+      'type': {
+        'name': 'func'
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
+      'required': false,
+      'description': '',
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
       }
     },
-    onDayMouseDown: {
-      type: {
-        name: 'func'
+    'onDayMouseDown': {
+      'type': {
+        'name': 'func'
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
+      'required': false,
+      'description': '',
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
       }
     },
-    onDayMouseUp: {
-      type: {
-        name: 'func'
+    'onDayMouseUp': {
+      'type': {
+        'name': 'func'
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
+      'required': false,
+      'description': '',
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
       }
     },
-    onDayMouseEnter: {
-      type: {
-        name: 'func'
+    'onDayMouseEnter': {
+      'type': {
+        'name': 'func'
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
+      'required': false,
+      'description': '',
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
       }
     },
-    onDayMouseLeave: {
-      type: {
-        name: 'func'
+    'onDayMouseLeave': {
+      'type': {
+        'name': 'func'
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
+      'required': false,
+      'description': '',
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
       }
     },
-    onDayTouchStart: {
-      type: {
-        name: 'func'
+    'onDayTouchStart': {
+      'type': {
+        'name': 'func'
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
+      'required': false,
+      'description': '',
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
       }
     },
-    onDayTouchEnd: {
-      type: {
-        name: 'func'
+    'onDayTouchEnd': {
+      'type': {
+        'name': 'func'
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
+      'required': false,
+      'description': '',
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
       }
     },
-    onDayTouchTap: {
-      type: {
-        name: 'func'
+    'onDayTouchTap': {
+      'type': {
+        'name': 'func'
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: 'function() {}',
-        computed: false
+      'required': false,
+      'description': '',
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
+      }
+    },
+    'hypen-dash': {
+      'type': {
+        'name': 'string'
+      },
+      'required': false,
+      'description': '',
+      'defaultValue': {
+        'value': '\'hello\'',
+        'computed': false
       }
     }
   }

@@ -44,31 +44,31 @@ function abc() {
   };
 }
 Button.__docgenInfo = {
-  description: '',
-  props: {
-    children: {
-      type: {
-        name: 'string'
+  'description': '',
+  'props': {
+    'children': {
+      'type': {
+        'name': 'string'
       },
-      required: true,
-      description: ''
+      'required': true,
+      'description': ''
     },
-    onClick: {
-      type: {
-        name: 'func'
+    'onClick': {
+      'type': {
+        'name': 'func'
       },
-      required: false,
-      description: ''
+      'required': false,
+      'description': ''
     },
-    style: {
-      type: {
-        name: 'object'
+    'style': {
+      'type': {
+        'name': 'object'
       },
-      required: false,
-      description: '',
-      defaultValue: {
-        value: '{}',
-        computed: false
+      'required': false,
+      'description': '',
+      'defaultValue': {
+        'value': '{}',
+        'computed': false
       }
     }
   }

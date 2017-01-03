@@ -52,14 +52,14 @@ ErrorBox.propTypes = {
 
 exports.default = ErrorBox;
 ErrorBox.__docgenInfo = {
-  description: '',
-  props: {
-    children: {
-      type: {
-        name: 'node'
+  'description': '',
+  'props': {
+    'children': {
+      'type': {
+        'name': 'node'
       },
-      required: true,
-      description: ''
+      'required': true,
+      'description': ''
     }
   }
 };
