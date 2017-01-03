@@ -35,14 +35,14 @@ First.propTypes = {
 
 exports.First = First;
 First.__docgenInfo = {
-  description: '',
-  props: {
-    children: {
-      type: {
-        name: 'node'
+  'description': '',
+  'props': {
+    'children': {
+      'type': {
+        'name': 'node'
       },
-      required: false,
-      description: ''
+      'required': false,
+      'description': ''
     }
   }
 };

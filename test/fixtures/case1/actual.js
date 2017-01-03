@@ -16,6 +16,7 @@ const propTypes = {
   onDayTouchStart: PropTypes.func,
   onDayTouchEnd: PropTypes.func,
   onDayTouchTap: PropTypes.func,
+  'hypen-dash': PropTypes.string,
 };
 
 const defaultProps = {
@@ -29,6 +30,7 @@ const defaultProps = {
   onDayTouchStart() {},
   onDayTouchEnd() {},
   onDayTouchTap() {},
+  'hypen-dash': 'hello'
 };
 
 export default class CalendarDay extends React.Component {

@@ -166,7 +166,7 @@ function buildObjectExpression(obj, t){
       if(!obj.hasOwnProperty(key) || _.isUndefined(obj[key])) continue;
       children.push(
         t.objectProperty(
-          t.identifier(key),
+          t.stringLiteral(key),
           buildObjectExpression(obj[key], t)
         ));
     }
