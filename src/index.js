@@ -21,6 +21,26 @@ export default function ({types: t}) {
         }
         injectReactDocgenInfo(className, path, state, this.file.code, t);
       },
+      'CallExpression'(path, state) {
+        const callee = path.node.callee;
+
+        const objectName = _.get(callee, 'object.name') ? callee.object.name.toLowerCase() : null;
+        const propertyName = _.get(callee, 'property.name') ? callee.property.name.toLowerCase() : null;
+
+        // Find React.createClass()
+        const hasCreateClass = (objectName === 'react' && propertyName === 'createclass');
+
+        // Find createReactClass()
+        const hasCreateReactClass = (propertyName === 'createreactclass');
+
+        if (hasCreateClass || hasCreateReactClass) {
+          // This is dedicated to those who do `module.exports = React.createClass()`
+          // className = class name from variable declaration || file name
+          let className = _.get(path, 'parentPath.parent.declarations[0].id.name') || path.hub.file.opts.basename;
+
+          injectReactDocgenInfo(className, path, state, this.file.code, t);
+        }
+      },
       'FunctionDeclaration|FunctionExpression|ArrowFunctionExpression'(path, state) {
         if(!isStatelessComponent(path)) {
           return;
