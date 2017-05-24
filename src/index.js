@@ -26,18 +26,18 @@ export default function ({types: t}) {
 
         const objectName = _.get(callee, 'object.name') ? callee.object.name.toLowerCase() : null;
         const propertyName = _.get(callee, 'property.name') ? callee.property.name.toLowerCase() : null;
+        const calleeName = _.get(callee, 'name') ? callee.name.toLowerCase() : null;
 
         // Find React.createClass()
         const hasCreateClass = (objectName === 'react' && propertyName === 'createclass');
 
         // Find createReactClass()
-        const hasCreateReactClass = (propertyName === 'createreactclass');
+        const hasCreateReactClass = (calleeName === 'createreactclass');
 
-        if (hasCreateClass || hasCreateReactClass) {
-          // This is dedicated to those who do `module.exports = React.createClass()`
-          // className = class name from variable declaration || file name
-          let className = _.get(path, 'parentPath.parent.declarations[0].id.name') || path.hub.file.opts.basename;
+        // Find React class name from variable declaration
+        const className = _.get(path, 'parentPath.parent.declarations[0].id.name');
 
+        if (className && (hasCreateClass || hasCreateReactClass)) {
           injectReactDocgenInfo(className, path, state, this.file.code, t);
         }
       },
