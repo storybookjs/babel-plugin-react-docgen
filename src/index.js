@@ -28,16 +28,16 @@ export default function ({types: t}) {
         const propertyName = _.get(callee, 'property.name') ? callee.property.name.toLowerCase() : null;
         const calleeName = _.get(callee, 'name') ? callee.name.toLowerCase() : null;
 
-        // Find React.createClass()
-        const hasCreateClass = (objectName === 'react' && propertyName === 'createclass');
+        // Detect `React.createClass()`
+        const hasReactCreateClass = (objectName === 'react' && propertyName === 'createclass');
 
-        // Find createReactClass()
+        // Detect `createReactClass()`
         const hasCreateReactClass = (calleeName === 'createreactclass');
 
-        // Find React class name from variable declaration
+        // Get React class name from variable declaration
         const className = _.get(path, 'parentPath.parent.declarations[0].id.name');
 
-        if (className && (hasCreateClass || hasCreateReactClass)) {
+        if (className && (hasReactCreateClass || hasCreateReactClass)) {
           injectReactDocgenInfo(className, path, state, this.file.code, t);
         }
       },
