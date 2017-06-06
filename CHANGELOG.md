@@ -3,8 +3,8 @@
 ### v1.5.0
 06-June-2017
 
-Uses docgen 2.15.0 and babel-types 6.24.1
-Add support for components created with React.createClass or createReactClass
+* Uses docgen 2.15.0 and babel-types 6.24.1
+* Add support for components created with React.createClass or createReactClass [PR27](https://github.com/storybooks/babel-plugin-react-docgen/pull/27)
 
 ### v1.4.2
 03-January-2017
