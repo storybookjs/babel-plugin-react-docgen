@@ -1,5 +1,11 @@
 # ChangeLog
 
+### v1.5.0
+06-June-2017
+
+Uses docgen 2.15.0 and babel-types 6.24.1
+Add support for components created with React.createClass or createReactClass
+
 ### v1.4.2
 03-January-2017
 
@@ -42,4 +48,4 @@ Initial public release.
 
 * Stateless component support
 * Global object with all the component docs
-* `__docgenInfo` is now an actual object insted of a JSON string
+* `__docgenInfo` is now an actual object instead of a JSON string
