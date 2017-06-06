@@ -76,8 +76,12 @@ function isExported(path, className, t){
        path.node.specifiers &&
        path.node.specifiers.length) {
       return className === path.node.specifiers[0].exported.name;
-    } else if(path.node.type === 'ExportDefaultDeclaration') {
+    } else if(path.node.type === 'ExportDefaultDeclaration' && path.node.declaration.type === 'Identifier') {
       return className === path.node.declaration.name;
+    } else if(path.node.type === 'ExportDefaultDeclaration' && path.node.declaration.type === 'CallExpression') {
+      return path.node.declaration.arguments.some((arg) => {
+        return arg.name === className;
+      });
     }
     return false;
   });
