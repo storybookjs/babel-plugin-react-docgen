@@ -37,8 +37,24 @@ export default function ({types: t}) {
         // Get React class name from variable declaration
         const className = _.get(path, 'parentPath.parent.declarations[0].id.name');
 
+        // Detect `React.createElement()`
+        const hasReactCreateElement = (objectName === 'react' && propertyName === 'createelement');
+
         if (className && (hasReactCreateClass || hasCreateReactClass)) {
           injectReactDocgenInfo(className, path, state, this.file.code, t);
+        }
+
+        if (hasReactCreateElement) {
+          const variableDeclaration = path.findParent((path) => path.isVariableDeclaration());
+          
+          if (variableDeclaration) {
+            const elementClassName = variableDeclaration.node.declarations[0].id.name;
+            if (!isExported(path, elementClassName, t)) {
+              return;
+            }
+          
+            injectReactDocgenInfo(elementClassName, path, state, this.file.code, t);
+          }
         }
       },
       'FunctionDeclaration|FunctionExpression|ArrowFunctionExpression'(path, state) {
