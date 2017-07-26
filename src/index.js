@@ -15,8 +15,9 @@ export default function ({types: t}) {
           return;
         }
         const className = path.node.id.name;
+        const {exported = true} = state.opts;
 
-        if(!isExported(path, className, t)){
+        if(exported && !isExported(path, className, t)){
           return;
         }
         injectReactDocgenInfo(className, path, state, this.file.code, t);
@@ -65,8 +66,9 @@ export default function ({types: t}) {
           return;
         }
         const className = path.parentPath.node.id.name;
+        const {exported = true} = state.opts;
 
-        if(!isExported(path, className, t)) {
+        if(exported && !isExported(path, className, t)) {
           return;
         }
         injectReactDocgenInfo(className, path, state, this.file.code, t);
