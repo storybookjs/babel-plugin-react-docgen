@@ -81,6 +81,15 @@ function isExported(path, className, t){
     'ExportNamedDeclaration'
   ];
 
+  function findMostRightHandArgument(args = []) {
+    const arg = args[0]
+    if (t.isIdentifier(arg)) {
+      return arg.name
+    } else if(t.isCallExpression(arg)) {
+      return findMostRightHandArgument(arg.arguments)
+    }
+  }
+
   if(path.parentPath.node &&
      types.some(type => {return path.parentPath.node.type === type;})) {
     return true;
@@ -93,7 +102,12 @@ function isExported(path, className, t){
        path.node.specifiers.length) {
       return className === path.node.specifiers[0].exported.name;
     } else if(path.node.type === 'ExportDefaultDeclaration') {
-      return className === path.node.declaration.name;
+      const decl = path.node.declaration
+      if (t.isCallExpression(decl)) {
+        return findMostRightHandArgument(decl.arguments);
+      } else {
+        return className === path.node.declaration.name;
+      }
     }
     return false;
   });
