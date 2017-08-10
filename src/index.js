@@ -104,7 +104,7 @@ function isExported(path, className, t){
     } else if(path.node.type === 'ExportDefaultDeclaration') {
       const decl = path.node.declaration
       if (t.isCallExpression(decl)) {
-        return findMostRightHandArgument(decl.arguments);
+        return className === findMostRightHandArgument(decl.arguments);
       } else {
         return className === path.node.declaration.name;
       }
