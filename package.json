@@ -2,7 +2,7 @@
   "version": "1.7.0",
   "name": "babel-plugin-react-docgen",
   "description": "Babel plugin to add react-docgen info into your code",
-  "repository": "https://github.com/kadirahq/babel-plugin-react-docgen",
+  "repository": "https://github.com/storybooks/babel-plugin-react-docgen",
   "author": "Madushan Nishantha <j.l.madushan@gmail.com>",
   "main": "lib/index.js",
   "devDependencies": {
@@ -17,7 +17,7 @@
     "build": "babel src -d lib",
     "test": "mocha --compilers js:babel-register",
     "test:watch": "npm run test -- --watch",
-    "prepublish": "npm run clean && npm run build"
+    "prepare": "npm run clean && npm run build"
   },
   "keywords": [
     "react",
