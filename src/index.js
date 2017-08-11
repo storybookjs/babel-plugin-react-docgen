@@ -106,7 +106,7 @@ function isExported(path, className, t){
       if (t.isCallExpression(decl)) {
         return className === findMostRightHandArgument(decl.arguments);
       } else {
-        return className === path.node.declaration.name;
+        return className === decl.name;
       }
     }
     return false;
