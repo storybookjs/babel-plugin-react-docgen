@@ -12,6 +12,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+/**
+ * Super tiny component
+ */
 var Component = function (_React$Component) {
   _inherits(Component, _React$Component);
 
@@ -32,14 +35,19 @@ var Component = function (_React$Component) {
 }(React.Component);
 
 Component.propTypes = {
+  /** Description for children */
   children: React.PropTypes.string.isRequired,
+  /**
+   * What happens onClick stays onClick
+   */
   onClick: React.PropTypes.func,
+  /** Fancy styles in here */
   style: React.PropTypes.object
 };
 
-exports.default = withHoc()(deeperHoc(Component));
+exports.default = withHoc(Component);
 Component.__docgenInfo = {
-  "description": "",
+  "description": "Super tiny component",
   "props": {
     "children": {
       "type": {
@@ -47,7 +55,7 @@ Component.__docgenInfo = {
         "raw": "React.PropTypes.string.isRequired"
       },
       "required": false,
-      "description": ""
+      "description": "Description for children"
     },
     "onClick": {
       "type": {
@@ -55,7 +63,7 @@ Component.__docgenInfo = {
         "raw": "React.PropTypes.func"
       },
       "required": false,
-      "description": ""
+      "description": "What happens onClick stays onClick"
     },
     "style": {
       "type": {
@@ -63,7 +71,7 @@ Component.__docgenInfo = {
         "raw": "React.PropTypes.object"
       },
       "required": false,
-      "description": ""
+      "description": "Fancy styles in here"
     }
   }
 };
