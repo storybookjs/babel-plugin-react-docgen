@@ -143,7 +143,7 @@ function injectReactDocgenInfo(className, path, state, code, t) {
 
     docObj = reactDocs.parse(code, resolver);
     
-    if (!state.opts.keepMethods) {
+    if (!state.opts.includeMethods) {
       delete docObj.methods;
     }
   } catch(e) {
