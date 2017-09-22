@@ -92,7 +92,14 @@ So, we allow you to collect all the docgen info into a global collection. To do 
 ```json
 {
   "plugins":[
-    ["babel-plugin-react-docgen", { "DOC_GEN_COLLECTION_NAME": "MY_REACT_DOCS"}]
+    [
+      "babel-plugin-react-docgen", 
+      { 
+        "DOC_GEN_COLLECTION_NAME": "MY_REACT_DOCS",
+        "resolver": "findAllExportedComponentDefinitions", // optional (default: undefined)
+        "keepMethods": true // optional (default: false)
+      }
+    ]
   ]
 }
 ```
