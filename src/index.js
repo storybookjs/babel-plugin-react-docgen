@@ -135,15 +135,19 @@ function injectReactDocgenInfo(className, path, state, code, t) {
 
   let docObj = {};
   try {
-    docObj = reactDocs.parse(code);
-    // We don't need anything about methods.
-    // Usually we don't use methods in react classes as a public API.
-    // Even if we do so, that's an anti-pattern.
-    // TODO:
-    //  Anyway, some may need this,
-    //  so we should provide an option to stop deleting methods.
-    delete docObj.methods;
+    let resolver;
+
+    if (state.opts.resolver) {
+      resolver = require('react-docgen').resolver[state.opts.resolver];
+    }
+
+    docObj = reactDocs.parse(code, resolver);
+    
+    if (!state.opts.keepMethods) {
+      delete docObj.methods;
+    }
   } catch(e) {
+    console.error(e);
     return;
   }
 
