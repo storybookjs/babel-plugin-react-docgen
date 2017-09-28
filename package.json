@@ -17,7 +17,7 @@
     "build": "babel src -d lib",
     "test": "mocha --compilers js:babel-register",
     "test:watch": "npm run test -- --watch",
-    "prepare": "npm run clean && npm run build"
+    "prepare": "npm run test && npm run clean && npm run build"
   },
   "keywords": [
     "react",
