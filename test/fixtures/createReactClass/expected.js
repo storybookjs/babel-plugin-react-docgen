@@ -12,6 +12,8 @@ var stylesheet = {};
  */
 
 var ComponentWrapper = createReactClass({
+  displayName: 'ComponentWrapper',
+
   propTypes: {
     /**
      * Theme to display
