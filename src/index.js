@@ -46,13 +46,13 @@ export default function ({types: t}) {
 
         if (hasReactCreateElement) {
           const variableDeclaration = path.findParent((path) => path.isVariableDeclaration());
-          
+
           if (variableDeclaration) {
             const elementClassName = variableDeclaration.node.declarations[0].id.name;
             if (!isExported(path, elementClassName, t)) {
               return;
             }
-          
+
             injectReactDocgenInfo(elementClassName, path, state, this.file.code, t);
           }
         }
@@ -142,12 +142,11 @@ function injectReactDocgenInfo(className, path, state, code, t) {
     }
 
     docObj = reactDocs.parse(code, resolver);
-    
+
     if (!state.opts.includeMethods) {
       delete docObj.methods;
     }
   } catch(e) {
-    console.error(e);
     return;
   }
 

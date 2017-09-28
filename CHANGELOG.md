@@ -1,5 +1,30 @@
 # ChangeLog
 
+### v1.8.1
+24-September-2017
+
+* Suppress errors caught during babel traversal
+[PR37](https://github.com/storybooks/babel-plugin-react-docgen/pull/37)
+
+### v1.8.0
+24-September-2017
+
+* Add support for custom resolvers
+* Add option to keep method info from docgen
+[PR35](https://github.com/storybooks/babel-plugin-react-docgen/pull/35)
+
+### v1.7.0
+11-August-2017
+
+* Add support for Higher Order Components with arbitrary depth
+[PR32](https://github.com/storybooks/babel-plugin-react-docgen/pull/32)
+
+### v1.6.0
+26-July-2017
+
+* Add support for React.createElement
+[PR31](https://github.com/storybooks/babel-plugin-react-docgen/pull/31)
+
 ### v1.5.0
 06-June-2017
 
