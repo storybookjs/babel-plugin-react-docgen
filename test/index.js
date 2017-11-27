@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import assert from 'assert';
-import { transformFileSync } from 'babel-core';
+import { transformFileSync } from '@babel/core';
 import plugin from '../src';
 
 function trim(str) {
@@ -16,8 +16,8 @@ describe('Add propType doc to react classes', () => {
       const actualPath = path.join(fixtureDir, 'actual.js');
       const options = {
         presets: [
-          "react",
-          "es2015",
+          "@babel/preset-react",
+          "@babel/preset-env",
         ],
         plugins: [
           [plugin, {
