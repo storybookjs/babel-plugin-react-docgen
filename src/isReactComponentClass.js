@@ -1,4 +1,4 @@
-import * as types from 'babel-types';
+import * as types from '@babel/types';
 
 function isRenderMethod(node) {
   return types.isClassMethod(node) &&
