@@ -61,21 +61,13 @@ export default function ({types: t}) {
         if (!isStatelessComponent(path)) {
           return;
         }
-        const nodeType = path.node.type;
 
-        let className;
+        const node = (path.node.type === 'FunctionDeclaration') ? path.node : path.parentPath.node;
 
-        if (nodeType === 'FunctionDeclaration') {
-          if (!path.node.id) {
-            return;
-          }
-          className = path.node.id.name;
-        } else {
-          if (!path.parentPath.node.id) {
-            return;
-          }
-          className = path.parentPath.node.id.name;
+        if (!node.id) {
+          return;
         }
+        const className = node.id.name;
 
         if (!isExported(path, className, t)) {
           return;
