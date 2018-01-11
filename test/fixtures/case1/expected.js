@@ -186,6 +186,7 @@ CalendarDay.propTypes = propTypes;
 CalendarDay.defaultProps = defaultProps;
 CalendarDay.__docgenInfo = {
   'description': '',
+  'displayName': 'CalendarDay',
   'props': {
     'day': {
       'type': {

@@ -58,15 +58,26 @@ export default function ({types: t}) {
         }
       },
       'FunctionDeclaration|FunctionExpression|ArrowFunctionExpression'(path, state) {
-        if(!isStatelessComponent(path)) {
+        if (!isStatelessComponent(path)) {
           return;
         }
-        if(!path.parentPath.node.id) {
-          return;
-        }
-        const className = path.parentPath.node.id.name;
+        const nodeType = path.node.type;
 
-        if(!isExported(path, className, t)) {
+        let className;
+
+        if (nodeType === 'FunctionDeclaration') {
+          if (!path.node.id) {
+            return;
+          }
+          className = path.node.id.name;
+        } else {
+          if (!path.parentPath.node.id) {
+            return;
+          }
+          className = path.parentPath.node.id.name;
+        }
+
+        if (!isExported(path, className, t)) {
           return;
         }
         injectReactDocgenInfo(className, path, state, this.file.code, t);
