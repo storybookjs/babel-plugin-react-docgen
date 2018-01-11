@@ -8,6 +8,8 @@ const stylesheet = {};
  */
 
 const ComponentWrapper = createReactClass({
+  displayName: 'ComponentWrapper',
+
   propTypes: {
     /**
      * Theme to display

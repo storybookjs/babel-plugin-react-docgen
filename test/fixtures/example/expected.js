@@ -69,7 +69,8 @@ var App = function (_Component) {
 
 exports.default = App;
 App.__docgenInfo = {
-  'description': ''
+  'description': '',
+  'displayName': 'App'
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
