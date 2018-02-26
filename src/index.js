@@ -111,6 +111,24 @@ function isExported(path, className, t){
       } else {
         return className === decl.name;
       }
+    // Detect module.exports = className;
+    } else if(path.node.type === 'ExpressionStatement') {
+      const expr = path.node.expression
+
+      if (t.isAssignmentExpression(expr)) {
+        const left = expr.left;
+        const right = expr.right;
+
+        const leftIsModuleExports = t.isMemberExpression(left) &&
+            t.isIdentifier(left.object) &&
+            t.isIdentifier(left.property) &&
+            left.object.name === 'module' &&
+            left.property.name === 'exports';
+
+        const rightIsIdentifierClass = t.isIdentifier(right) && right.name === className;
+
+        return leftIsModuleExports && rightIsIdentifierClass;
+      }
     }
     return false;
   });
