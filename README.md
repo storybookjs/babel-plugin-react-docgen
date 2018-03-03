@@ -87,7 +87,7 @@ Use it inside your `.babelrc`
 
 |  option  |  description   |  default   |
 | --- | --- | --- |
-|   resolver  |   [react-docgen](https://github.com/reactjs/react-docgen) has 3 built in resolvers which may be used. Resolvers define how/what the doc generator will inspect. You may inspect the existing resolvers in [https://github.com/reactjs/react-docgen/tree/master/src/resolver](react-docgen/src/resolver).  | ```"findExportedComponentDefinition"``` |
+|   resolver  |   [react-docgen](https://github.com/reactjs/react-docgen) has 3 built in resolvers which may be used. Resolvers define how/what the doc generator will inspect. You may inspect the existing resolvers in [react-docgen/tree/master/src/resolver](https://github.com/reactjs/react-docgen/tree/master/src/resolver).  | ```"findExportedComponentDefinition"``` |
 |   includeMethods  | by default this plugin will remove method information about react components since it should not be needed in most cases |   ```false```  |
 
 ## Collect All Docgen Info
