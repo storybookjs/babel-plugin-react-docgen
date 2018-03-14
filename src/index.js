@@ -162,7 +162,8 @@ function injectReactDocgenInfo(className, path, state, code, t) {
       resolver = require('react-docgen').resolver[state.opts.resolver];
     }
 
-    docObj = reactDocs.parse(code, resolver);
+    const parsedDocs = reactDocs.parse(code, resolver);
+    docObj = Object.prototype.toString.call(parsedDocs) == '[object Array]' ? parsedDocs[0] : parsedDocs;
 
     if (!state.opts.includeMethods) {
       delete docObj.methods;
