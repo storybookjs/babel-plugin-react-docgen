@@ -205,7 +205,8 @@ CalendarDay.__docgenInfo = {
         'name': 'arrayOf',
         'value': {
           'name': 'string'
-        }
+        },
+        'required': false
       },
       'required': false,
       'description': '',

@@ -35,6 +35,7 @@ Kitten.defaultProps = {
 exports.default = Kitten;
 Kitten.__docgenInfo = {
   'description': '',
+  'displayName': 'Kitten',
   'props': {
     'isWide': {
       'type': {

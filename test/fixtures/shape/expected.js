@@ -15,7 +15,6 @@ var Button = function Button(_ref) {
       onClick = _ref.onClick,
       _ref$style = _ref.style,
       style = _ref$style === undefined ? {} : _ref$style;
-
   return _react2.default.createElement(
     'button',
     {
@@ -29,7 +28,13 @@ var Button = function Button(_ref) {
 Button.propTypes = {
   children: _react2.default.PropTypes.string.isRequired,
   onClick: _react2.default.PropTypes.func,
-  style: _react2.default.PropTypes.object
+  style: _react2.default.PropTypes.object,
+  icon: _react2.default.PropTypes.shape({
+    /**
+     * The name of the icon to show in the brick
+     */
+    name: _react2.default.PropTypes.string
+  }).isRequired
 };
 
 exports.default = Button;
@@ -71,14 +76,29 @@ Button.__docgenInfo = {
         'value': '{}',
         'computed': false
       }
+    },
+    'icon': {
+      'type': {
+        'name': 'shape',
+        'value': {
+          'name': {
+            'name': 'string',
+            'description': 'The name of the icon to show in the brick',
+            'required': false
+          }
+        },
+        'required': true
+      },
+      'required': true,
+      'description': ''
     }
   }
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
-  STORYBOOK_REACT_CLASSES['test/fixtures/case4/actual.js'] = {
+  STORYBOOK_REACT_CLASSES['test/fixtures/shape/actual.js'] = {
     name: 'Button',
     docgenInfo: Button.__docgenInfo,
-    path: 'test/fixtures/case4/actual.js'
+    path: 'test/fixtures/shape/actual.js'
   };
 }

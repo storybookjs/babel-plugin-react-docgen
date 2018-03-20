@@ -1681,9 +1681,9 @@ rc@~1.1.0:
     minimist "^1.2.0"
     strip-json-comments "~1.0.4"
 
-react-docgen@^2.20.0:
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-2.20.0.tgz#41a6da483a34a4aaed041a9909f5e61864d681cb"
+"react-docgen@https://github.com/NikhilVerma/react-docgen/archive/v3.0.0-beta12.tar.gz":
+  version "2.20.1"
+  resolved "https://github.com/NikhilVerma/react-docgen/archive/v3.0.0-beta12.tar.gz#154da4269e038fc304fa41fae8bbcf04da9fda0a"
   dependencies:
     async "^2.1.4"
     babel-runtime "^6.9.2"
