@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.9.0
+04-April-2018
+
+* Use react-docgen 3.0-beta for enhanced Flow support
+
 ### v1.8.3
 28-February-2018
 
