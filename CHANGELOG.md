@@ -1,5 +1,17 @@
 # ChangeLog
 
+### v1.8.3
+28-February-2018
+
+* Add support for `module.exports = className` declaration
+[PR47](https://github.com/storybooks/babel-plugin-react-docgen/pull/44)
+
+### v1.8.2
+
+14-January-2018
+* Add support for stateless functional components declared as `function(){ }`
+[PR41](https://github.com/storybooks/babel-plugin-react-docgen/pull/41)
+
 ### v1.8.1
 24-September-2017
 
