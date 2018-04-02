@@ -28,7 +28,7 @@
   "dependencies": {
     "babel-types": "^6.24.1",
     "lodash": "^4.17.0",
-    "react-docgen": "^2.20.0"
+    "react-docgen": "^3.0.0-beta11"
   },
   "license": "MIT"
 }

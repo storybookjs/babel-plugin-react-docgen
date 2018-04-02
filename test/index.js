@@ -28,7 +28,7 @@ describe('Add propType doc to react classes', () => {
       };
 
       const actual = transformFileSync(actualPath, options).code;
-      //fs.writeFileSync(path.join(fixtureDir, 'actual-output.js'), actual);
+      // fs.writeFileSync(path.join(fixtureDir, 'expected.js'), actual);
       const expected = fs.readFileSync(
           path.join(fixtureDir, 'expected.js')
       ).toString();
