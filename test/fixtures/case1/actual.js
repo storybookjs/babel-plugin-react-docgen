@@ -42,7 +42,13 @@ export default class CalendarDay extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
     return shallowCompare(this, nextProps, nextState);
   }
-
+  /**
+   * Some description about how handleDayClick works
+   * @param  {Object} day this is a moment js object
+   * @param  {number|string} modifiers hello world
+   * @param  {number=} e events yo
+   * @return {*} wut return
+   */
   handleDayClick(day, modifiers, e) {
     this.props.onDayClick(day, modifiers, e);
   }
