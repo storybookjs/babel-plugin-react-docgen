@@ -43,6 +43,7 @@ module.exports = ComponentWrapper;
 ComponentWrapper.__docgenInfo = {
   'description': 'Component for displaying a container that resembles the original CSS environment for different themes',
   'displayName': 'ComponentWrapper',
+  'methods': [],
   'props': {
     'theme': {
       'type': {

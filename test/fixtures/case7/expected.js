@@ -36,6 +36,7 @@ First.propTypes = {
 exports.First = First;
 First.__docgenInfo = {
   'description': '',
+  'methods': [],
   'props': {
     'children': {
       'type': {
