@@ -54,6 +54,7 @@ exports.default = ErrorBox;
 ErrorBox.__docgenInfo = {
   'description': '',
   'displayName': 'ErrorBox',
+  'methods': [],
   'props': {
     'children': {
       'type': {

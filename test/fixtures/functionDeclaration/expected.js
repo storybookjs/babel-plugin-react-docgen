@@ -37,6 +37,7 @@ exports.default = FuncDeclaration;
 FuncDeclaration.__docgenInfo = {
   'description': '',
   'displayName': 'FuncDeclaration',
+  'methods': [],
   'props': {
     'children': {
       'type': {

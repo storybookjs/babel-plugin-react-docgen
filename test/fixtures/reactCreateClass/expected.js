@@ -41,6 +41,7 @@ var ComponentWrapper = React.createClass({
 module.exports = ComponentWrapper;
 ComponentWrapper.__docgenInfo = {
   'description': 'Component for displaying a container that resembles the original CSS environment for different themes',
+  'methods': [],
   'props': {
     'theme': {
       'type': {
