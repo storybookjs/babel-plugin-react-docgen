@@ -79,6 +79,14 @@ var CalendarDay = function (_React$Component) {
     value: function shouldComponentUpdate(nextProps, nextState) {
       return (0, _reactAddonsShallowCompare2.default)(this, nextProps, nextState);
     }
+    /**
+     * Some description about how handleDayClick works
+     * @param  {Object} day this is a moment js object
+     * @param  {number|string} modifiers hello world
+     * @param  {number=} e events yo
+     * @return {*} wut return
+     */
+
   }, {
     key: 'handleDayClick',
     value: function handleDayClick(day, modifiers, e) {
@@ -189,19 +197,36 @@ CalendarDay.__docgenInfo = {
   'displayName': 'CalendarDay',
   'methods': [{
     'name': 'handleDayClick',
-    'docblock': null,
+    'docblock': 'Some description about how handleDayClick works\n@param  {Object} day this is a moment js object\n@param  {number|string} modifiers hello world\n@param  {number=} e events yo\n@return {*} wut return',
     'modifiers': [],
     'params': [{
       'name': 'day',
-      'type': null
+      'description': 'this is a moment js object',
+      'type': {
+        'name': 'Object'
+      }
     }, {
       'name': 'modifiers',
-      'type': null
+      'description': 'hello world',
+      'type': {
+        'name': 'union',
+        'value': ['number', 'string']
+      }
     }, {
       'name': 'e',
-      'type': null
+      'description': 'events yo',
+      'type': {
+        'name': 'number'
+      },
+      'optional': true
     }],
-    'returns': null
+    'returns': {
+      'description': 'wut return',
+      'type': {
+        'name': 'mixed'
+      }
+    },
+    'description': 'Some description about how handleDayClick works'
   }, {
     'name': 'handleDayMouseDown',
     'docblock': null,
