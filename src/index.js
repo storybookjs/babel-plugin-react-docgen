@@ -103,7 +103,7 @@ function isExported(path, className, t){
     if(path.node.type === 'ExportNamedDeclaration' &&
        path.node.specifiers &&
        path.node.specifiers.length) {
-      return className === path.node.specifiers[0].exported.name;
+      return className === path.node.specifiers[0].local.name;
     } else if(path.node.type === 'ExportDefaultDeclaration') {
       const decl = path.node.declaration
       if (t.isCallExpression(decl)) {
