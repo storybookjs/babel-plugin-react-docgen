@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import * as reactDocs from 'react-docgen';
+import { parse as ReactDocgenParse, resolver as ReactDocgenResolver } from 'react-docgen';
 import isReactComponentClass from './isReactComponentClass';
 import isStatelessComponent from './isStatelessComponent';
 import * as p from 'path';
@@ -154,32 +154,53 @@ function injectReactDocgenInfo(className, path, state, code, t) {
     return;
   }
 
-  let docObj = {};
-  try {
-    let resolver;
+  let docgenResults = [];
+  try { // all exported component definitions includes named exports
+    let resolver = ReactDocgenResolver.findAllExportedComponentDefinitions;
 
     if (state.opts.resolver) {
-      resolver = require('react-docgen').resolver[state.opts.resolver];
+      resolver = ReactDocgenResolver[state.opts.resolver];
     }
 
-    docObj = reactDocs.parse(code, resolver);
+    docgenResults = ReactDocgenParse(code, resolver);
 
     if (!state.opts.includeMethods) {
-      delete docObj.methods;
+      docgenResults.forEach(function(docgenResult) {
+        delete docgenResult.methods;
+      })
     }
   } catch(e) {
+    // this is for debugging the error only, do not ship this console log or else it pollutes the webpack output
+    // console.log(e);
     return;
   }
 
-  const docNode = buildObjectExpression(docObj, t);
-  const docgenInfo = t.expressionStatement(
-    t.assignmentExpression(
-      "=",
-      t.memberExpression(t.identifier(className), t.identifier('__docgenInfo')),
-      docNode
-    ));
-  program.pushContainer('body', docgenInfo);
-  injectDocgenGlobal(className, path, state, t);
+  // docgen sometimes doesn't include 'displayName' which is the react function/class name
+  // the first time it's not available, we try to match it to the export name
+  let isDefaultClassNameUsed = false;
+
+  docgenResults.forEach(function(docgenResult, index) {
+    if (isDefaultClassNameUsed && !docgenResult.displayName) {
+      return;
+    }
+
+    let exportName = docgenResult.displayName;
+    if (!exportName) {
+      exportName = className;
+      isDefaultClassNameUsed = true;
+    }
+
+    const docNode = buildObjectExpression(docgenResult, t);
+    const docgenInfo = t.expressionStatement(
+      t.assignmentExpression(
+        "=",
+        t.memberExpression(t.identifier(exportName), t.identifier('__docgenInfo')),
+        docNode
+      ));
+    program.pushContainer('body', docgenInfo);
+
+    injectDocgenGlobal(exportName, path, state, t);
+  });
 }
 
 function injectDocgenGlobal(className, path, state, t) {
