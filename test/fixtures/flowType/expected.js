@@ -36,6 +36,11 @@ var FlowTypeButton = function (_React$Component) {
       console.log(bar);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
+  /**
+   * handle click number of times clicked and update parent component via callback
+   * @return  {string} returns nothing but at least this makes it into docgen
+   */
+
 
   _createClass(FlowTypeButton, [{
     key: 'render',
@@ -57,7 +62,7 @@ FlowTypeButton.__docgenInfo = {
   'displayName': 'FlowTypeButton',
   'methods': [{
     'name': 'handleClick',
-    'docblock': null,
+    'docblock': 'handle click number of times clicked and update parent component via callback\n@return  {string} returns nothing but at least this makes it into docgen',
     'modifiers': [],
     'params': [{
       'name': 'bar',
@@ -66,7 +71,13 @@ FlowTypeButton.__docgenInfo = {
         'name': 'string'
       }
     }],
-    'returns': null
+    'returns': {
+      'description': 'returns nothing but at least this makes it into docgen',
+      'type': {
+        'name': 'string'
+      }
+    },
+    'description': 'handle click number of times clicked and update parent component via callback'
   }],
   'props': {
     'label': {
