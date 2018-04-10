@@ -87,6 +87,7 @@ exports.ErrorBox2 = ErrorBox2;
 ErrorBox.__docgenInfo = {
   'description': '',
   'displayName': 'ErrorBox',
+  'methods': [],
   'props': {
     'children': {
       'type': {
@@ -109,6 +110,7 @@ if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
 ErrorBox2.__docgenInfo = {
   'description': '',
   'displayName': 'ErrorBox2',
+  'methods': [],
   'props': {
     'children2': {
       'type': {

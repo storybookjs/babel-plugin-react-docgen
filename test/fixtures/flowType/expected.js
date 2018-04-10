@@ -55,6 +55,19 @@ exports.default = FlowTypeButton;
 FlowTypeButton.__docgenInfo = {
   'description': '',
   'displayName': 'FlowTypeButton',
+  'methods': [{
+    'name': 'handleClick',
+    'docblock': null,
+    'modifiers': [],
+    'params': [{
+      'name': 'bar',
+      'optional': true,
+      'type': {
+        'name': 'string'
+      }
+    }],
+    'returns': null
+  }],
   'props': {
     'label': {
       'flowType': {

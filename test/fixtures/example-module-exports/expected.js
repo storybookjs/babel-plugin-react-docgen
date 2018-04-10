@@ -43,7 +43,8 @@ function App() {
 module.exports = App;
 App.__docgenInfo = {
   'description': '',
-  'displayName': 'App'
+  'displayName': 'App',
+  'methods': []
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {

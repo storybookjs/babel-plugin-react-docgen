@@ -164,7 +164,7 @@ function injectReactDocgenInfo(className, path, state, code, t) {
 
     docgenResults = ReactDocgenParse(code, resolver);
 
-    if (!state.opts.includeMethods) {
+    if (state.opts.removeMethods) {
       docgenResults.forEach(function(docgenResult) {
         delete docgenResult.methods;
       })

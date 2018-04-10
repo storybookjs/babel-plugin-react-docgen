@@ -45,6 +45,7 @@ function abc() {
 }
 Button.__docgenInfo = {
   'description': '',
+  'methods': [],
   'props': {
     'children': {
       'type': {

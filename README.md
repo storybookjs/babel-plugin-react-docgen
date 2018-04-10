@@ -88,7 +88,7 @@ Use it inside your `.babelrc`
 |  option  |  description   |  default   |
 | --- | --- | --- |
 |   resolver  |   [react-docgen](https://github.com/reactjs/react-docgen) has 3 built in resolvers which may be used. Resolvers define how/what the doc generator will inspect. You may inspect the existing resolvers in [react-docgen/tree/master/src/resolver](https://github.com/reactjs/react-docgen/tree/master/src/resolver).  | ```"findAllExportedComponentDefinition"``` |
-|   includeMethods  | by default this plugin will remove method information about react components since it should not be needed in most cases |   ```false```  |
+|   removeMethods  | optionally remove docgen information about methods |   ```false```  |
 
 ## Collect All Docgen Info
 
@@ -104,7 +104,7 @@ So, we allow you to collect all the docgen info into a global collection. To do 
       {
         "DOC_GEN_COLLECTION_NAME": "MY_REACT_DOCS",
         "resolver": "findAllComponentDefinitions", // optional (default: findAllComponentDefinitions)
-        "includeMethods": true // optional (default: false)
+        "removeMethods": true // optional (default: false)
       }
     ]
   ]

@@ -187,6 +187,127 @@ CalendarDay.defaultProps = defaultProps;
 CalendarDay.__docgenInfo = {
   'description': '',
   'displayName': 'CalendarDay',
+  'methods': [{
+    'name': 'handleDayClick',
+    'docblock': null,
+    'modifiers': [],
+    'params': [{
+      'name': 'day',
+      'type': null
+    }, {
+      'name': 'modifiers',
+      'type': null
+    }, {
+      'name': 'e',
+      'type': null
+    }],
+    'returns': null
+  }, {
+    'name': 'handleDayMouseDown',
+    'docblock': null,
+    'modifiers': [],
+    'params': [{
+      'name': 'day',
+      'type': null
+    }, {
+      'name': 'modifiers',
+      'type': null
+    }, {
+      'name': 'e',
+      'type': null
+    }],
+    'returns': null
+  }, {
+    'name': 'handleDayMouseUp',
+    'docblock': null,
+    'modifiers': [],
+    'params': [{
+      'name': 'day',
+      'type': null
+    }, {
+      'name': 'modifiers',
+      'type': null
+    }, {
+      'name': 'e',
+      'type': null
+    }],
+    'returns': null
+  }, {
+    'name': 'handleDayMouseEnter',
+    'docblock': null,
+    'modifiers': [],
+    'params': [{
+      'name': 'day',
+      'type': null
+    }, {
+      'name': 'modifiers',
+      'type': null
+    }, {
+      'name': 'e',
+      'type': null
+    }],
+    'returns': null
+  }, {
+    'name': 'handleDayMouseLeave',
+    'docblock': null,
+    'modifiers': [],
+    'params': [{
+      'name': 'day',
+      'type': null
+    }, {
+      'name': 'modifiers',
+      'type': null
+    }, {
+      'name': 'e',
+      'type': null
+    }],
+    'returns': null
+  }, {
+    'name': 'handleDayTouchStart',
+    'docblock': null,
+    'modifiers': [],
+    'params': [{
+      'name': 'day',
+      'type': null
+    }, {
+      'name': 'modifiers',
+      'type': null
+    }, {
+      'name': 'e',
+      'type': null
+    }],
+    'returns': null
+  }, {
+    'name': 'handleDayTouchEnd',
+    'docblock': null,
+    'modifiers': [],
+    'params': [{
+      'name': 'day',
+      'type': null
+    }, {
+      'name': 'modifiers',
+      'type': null
+    }, {
+      'name': 'e',
+      'type': null
+    }],
+    'returns': null
+  }, {
+    'name': 'handleDayTouchTap',
+    'docblock': null,
+    'modifiers': [],
+    'params': [{
+      'name': 'day',
+      'type': null
+    }, {
+      'name': 'modifiers',
+      'type': null
+    }, {
+      'name': 'e',
+      'type': null
+    }],
+    'returns': null
+  }],
   'props': {
     'day': {
       'type': {
