@@ -1,5 +1,15 @@
 # ChangeLog
 
+### v2.0.0
+
+Breaking changes:
+* Use `findAllExportedComponentDefinitions` by default to generate info for named exports
+* Default to not remove method info and changed `.babelrc` key to `removeMethods`
+
+Bug fixes:
+* Fix for named export using incorrect local name in `export default ComponentName`
+[PR38](https://github.com/storybooks/babel-plugin-react-docgen/pull/38)
+
 ### v1.9.0
 04-April-2018
 
