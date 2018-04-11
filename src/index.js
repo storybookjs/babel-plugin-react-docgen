@@ -1,8 +1,8 @@
 import * as _ from 'lodash';
-import { parse as ReactDocgenParse, resolver as ReactDocgenResolver } from 'react-docgen';
+import * as ReactDocgen from 'react-docgen';
 import isReactComponentClass from './isReactComponentClass';
 import isStatelessComponent from './isStatelessComponent';
-import * as p from 'path';
+import * as Path from 'path';
 
 export default function ({types: t}) {
   return {
@@ -156,13 +156,13 @@ function injectReactDocgenInfo(className, path, state, code, t) {
 
   let docgenResults = [];
   try { // all exported component definitions includes named exports
-    let resolver = ReactDocgenResolver.findAllExportedComponentDefinitions;
+    let resolver = ReactDocgen.resolver.findAllExportedComponentDefinitions;
 
     if (state.opts.resolver) {
-      resolver = ReactDocgenResolver[state.opts.resolver];
+      resolver = ReactDocgen.resolver[state.opts.resolver];
     }
 
-    docgenResults = ReactDocgenParse(code, resolver);
+    docgenResults = ReactDocgen.parse(code, resolver);
 
     if (state.opts.removeMethods) {
       docgenResults.forEach(function(docgenResult) {
@@ -211,7 +211,7 @@ function injectDocgenGlobal(className, path, state, t) {
   }
 
   const globalName = state.opts.DOC_GEN_COLLECTION_NAME;
-  const filePath = p.relative('./', p.resolve('./', path.hub.file.opts.filename));
+  const filePath = Path.relative('./', Path.resolve('./', path.hub.file.opts.filename));
   const globalNode = t.ifStatement(
     t.binaryExpression(
       '!==',
