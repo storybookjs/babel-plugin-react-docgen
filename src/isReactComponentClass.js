@@ -1,7 +1,7 @@
-import * as types from 'babel-types';
+import * as BabelTypes from 'babel-types';
 
 function isRenderMethod(node) {
-  return types.isClassMethod(node) &&
+  return BabelTypes.isClassMethod(node) &&
     !node.computed &&
     !node.static &&
     (node.kind === '' || node.kind === 'method') &&
@@ -10,8 +10,8 @@ function isRenderMethod(node) {
 
 export default function isReactComponentClass(path) {
   var node = path.node;
-  if (!types.isClassDeclaration(node) &&
-    !types.isClassExpression(node)) {
+  if (!BabelTypes.isClassDeclaration(node) &&
+    !BabelTypes.isClassExpression(node)) {
     return false;
   }
 
@@ -26,7 +26,7 @@ export default function isReactComponentClass(path) {
   }
   var superClass = path.get('superClass');
   if (
-    (types.isMemberExpression(superClass.node) && superClass.get('property').node.name != 'Component')
+    (BabelTypes.isMemberExpression(superClass.node) && superClass.get('property').node.name != 'Component')
       || superClass.node.name != 'Component'
   ) {
     return false;
