@@ -15,13 +15,13 @@ describe('Add propType doc to react classes', () => {
     if (caseName.indexOf('.DS_Store') < 0) {
       it(`should ${caseName.split('-').join(' ')}`, () => {
         const fixtureDir = path.join(fixturesDir, caseName);
-        const actualPath = path.join(fixtureDir, 'source.js');
+        const actualPath = path.join(fixtureDir, 'actual.js');
         const options = {
           presets: [
-            "react",
             "env",
             "flow",
-            "stage-0"
+            "stage-0",
+            "react"
           ],
           plugins: [
             [plugin, {
@@ -32,8 +32,10 @@ describe('Add propType doc to react classes', () => {
         };
 
         const actual = transformFileSync(actualPath, options).code;
-        // fs.writeFileSync(path.join(fixtureDir, 'actual.js'), actual);
-        const expected = fs.readFileSync(path.join(fixtureDir, 'expected.js')).toString();
+        // fs.writeFileSync(path.join(fixtureDir, 'expected.js'), actual);
+        const expected = fs.readFileSync(
+          path.join(fixtureDir, 'expected.js')
+        ).toString();
         assert.equal(trim(actual), trim(expected));
       });
     }

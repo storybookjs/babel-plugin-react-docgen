@@ -42,20 +42,20 @@ var ComponentWrapper = createReactClass({
 module.exports = ComponentWrapper;
 ComponentWrapper.__docgenInfo = {
   'description': 'Component for displaying a container that resembles the original CSS environment for different themes',
-  'displayName': 'ComponentWrapper',
   'methods': [],
+  'displayName': 'ComponentWrapper',
   'props': {
     'theme': {
+      'defaultValue': {
+        'value': '\'damask\'',
+        'computed': false
+      },
       'type': {
         'name': 'custom',
         'raw': 'PropTypes.string'
       },
       'required': false,
-      'description': 'Theme to display',
-      'defaultValue': {
-        'value': '\'damask\'',
-        'computed': false
-      }
+      'description': 'Theme to display'
     }
   }
 };
