@@ -44,15 +44,15 @@ ComponentWrapper.__docgenInfo = {
   'methods': [],
   'props': {
     'theme': {
+      'defaultValue': {
+        'value': '\'damask\'',
+        'computed': false
+      },
       'type': {
         'name': 'string'
       },
       'required': false,
-      'description': 'Theme to display',
-      'defaultValue': {
-        'value': '\'damask\'',
-        'computed': false
-      }
+      'description': 'Theme to display'
     }
   }
 };

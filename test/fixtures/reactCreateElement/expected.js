@@ -38,26 +38,26 @@ Kitten.__docgenInfo = {
   'methods': [],
   'props': {
     'isWide': {
+      'defaultValue': {
+        'value': 'false',
+        'computed': false
+      },
       'type': {
         'name': 'bool'
       },
       'required': false,
-      'description': 'Whether the cat is wide',
-      'defaultValue': {
-        'value': 'false',
-        'computed': false
-      }
+      'description': 'Whether the cat is wide'
     },
     'isLong': {
+      'defaultValue': {
+        'value': 'false',
+        'computed': false
+      },
       'type': {
         'name': 'bool'
       },
       'required': false,
-      'description': 'Whether the cat is long',
-      'defaultValue': {
-        'value': 'false',
-        'computed': false
-      }
+      'description': 'Whether the cat is long'
     }
   }
 };

@@ -61,8 +61,8 @@ Wrapper.propTypes = {
 };
 Wrapper.__docgenInfo = {
   "description": "",
-  "displayName": "Wrapper",
   "methods": [],
+  "displayName": "Wrapper",
   "props": {
     "children": {
       "type": {

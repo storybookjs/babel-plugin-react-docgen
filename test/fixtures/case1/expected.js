@@ -194,7 +194,6 @@ CalendarDay.propTypes = propTypes;
 CalendarDay.defaultProps = defaultProps;
 CalendarDay.__docgenInfo = {
   'description': '',
-  'displayName': 'CalendarDay',
   'methods': [{
     'name': 'handleDayClick',
     'docblock': 'Some description about how handleDayClick works\n@param  {Object} day this is a moment js object\n@param  {number|string} modifiers hello world\n@param  {number=} e events yo\n@return {*} wut return',
@@ -333,20 +332,25 @@ CalendarDay.__docgenInfo = {
     }],
     'returns': null
   }],
+  'displayName': 'CalendarDay',
   'props': {
     'day': {
+      'defaultValue': {
+        'value': 'moment()',
+        'computed': true
+      },
       'type': {
         'name': 'custom',
         'raw': 'momentPropTypes.momentObj'
       },
       'required': false,
-      'description': '',
-      'defaultValue': {
-        'value': 'moment()',
-        'computed': true
-      }
+      'description': ''
     },
     'modifiers': {
+      'defaultValue': {
+        'value': '[]',
+        'computed': false
+      },
       'type': {
         'name': 'arrayOf',
         'value': {
@@ -354,110 +358,106 @@ CalendarDay.__docgenInfo = {
         }
       },
       'required': false,
-      'description': '',
-      'defaultValue': {
-        'value': '[]',
-        'computed': false
-      }
+      'description': ''
     },
     'onDayClick': {
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
+      },
       'type': {
         'name': 'func'
       },
       'required': false,
-      'description': '',
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
-      }
+      'description': ''
     },
     'onDayMouseDown': {
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
+      },
       'type': {
         'name': 'func'
       },
       'required': false,
-      'description': '',
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
-      }
+      'description': ''
     },
     'onDayMouseUp': {
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
+      },
       'type': {
         'name': 'func'
       },
       'required': false,
-      'description': '',
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
-      }
+      'description': ''
     },
     'onDayMouseEnter': {
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
+      },
       'type': {
         'name': 'func'
       },
       'required': false,
-      'description': '',
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
-      }
+      'description': ''
     },
     'onDayMouseLeave': {
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
+      },
       'type': {
         'name': 'func'
       },
       'required': false,
-      'description': '',
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
-      }
+      'description': ''
     },
     'onDayTouchStart': {
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
+      },
       'type': {
         'name': 'func'
       },
       'required': false,
-      'description': '',
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
-      }
+      'description': ''
     },
     'onDayTouchEnd': {
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
+      },
       'type': {
         'name': 'func'
       },
       'required': false,
-      'description': '',
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
-      }
+      'description': ''
     },
     'onDayTouchTap': {
+      'defaultValue': {
+        'value': 'function() {}',
+        'computed': false
+      },
       'type': {
         'name': 'func'
       },
       'required': false,
-      'description': '',
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
-      }
+      'description': ''
     },
     'hypen-dash': {
+      'defaultValue': {
+        'value': '\'hello\'',
+        'computed': false
+      },
       'type': {
         'name': 'string'
       },
       'required': false,
-      'description': '',
-      'defaultValue': {
-        'value': '\'hello\'',
-        'computed': false
-      }
+      'description': ''
     }
   }
 };

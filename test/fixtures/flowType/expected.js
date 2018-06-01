@@ -59,7 +59,6 @@ var FlowTypeButton = function (_React$Component) {
 exports.default = FlowTypeButton;
 FlowTypeButton.__docgenInfo = {
   'description': '',
-  'displayName': 'FlowTypeButton',
   'methods': [{
     'name': 'handleClick',
     'docblock': 'handle click number of times clicked and update parent component via callback\n@return  {string} returns nothing but at least this makes it into docgen',
@@ -79,6 +78,7 @@ FlowTypeButton.__docgenInfo = {
     },
     'description': 'handle click number of times clicked and update parent component via callback'
   }],
+  'displayName': 'FlowTypeButton',
   'props': {
     'label': {
       'flowType': {
