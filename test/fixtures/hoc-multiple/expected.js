@@ -48,8 +48,8 @@ Component.propTypes = {
 exports.default = withHoc()(deeperHoc(Component));
 Component.__docgenInfo = {
   "description": "Super tiny component",
-  "displayName": "Component",
   "methods": [],
+  "displayName": "Component",
   "props": {
     "children": {
       "type": {
