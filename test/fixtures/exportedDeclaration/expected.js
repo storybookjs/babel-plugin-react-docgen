@@ -36,6 +36,17 @@ Button.__docgenInfo = {
   'description': '',
   'methods': [],
   'props': {
+    'style': {
+      'defaultValue': {
+        'value': '{}',
+        'computed': false
+      },
+      'type': {
+        'name': 'object'
+      },
+      'required': false,
+      'description': ''
+    },
     'children': {
       'type': {
         'name': 'string'
@@ -49,17 +60,6 @@ Button.__docgenInfo = {
       },
       'required': false,
       'description': ''
-    },
-    'style': {
-      'type': {
-        'name': 'object'
-      },
-      'required': false,
-      'description': '',
-      'defaultValue': {
-        'value': '{}',
-        'computed': false
-      }
     }
   }
 };
