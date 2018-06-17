@@ -6,12 +6,12 @@
   "author": "Madushan Nishantha <j.l.madushan@gmail.com>",
   "main": "lib/index.js",
   "devDependencies": {
-    "babel-cli": "^6.0.0",
-    "babel-preset-stage-0": "^6.16.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
-    "babel-preset-react": "^6.16.0",
-    "mocha": "^2.0.0"
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "mocha": "^4.1.0"
   },
   "scripts": {
     "clean": "rm -rf lib",
@@ -27,8 +27,8 @@
     "babel-plugin"
   ],
   "dependencies": {
-    "babel-types": "^6.24.1",
-    "lodash": "^4.17.0",
+    "babel-types": "^6.26.0",
+    "lodash": "^4.17.10",
     "react-docgen": "^3.0.0-beta11"
   },
   "license": "MIT"
