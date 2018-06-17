@@ -100,10 +100,12 @@ function isExported(path, className, t){
 
   const program = path.scope.getProgramParent().path;
   return program.get('body').some(path => {
-    if(path.node.type === 'ExportNamedDeclaration' &&
-       path.node.specifiers &&
-       path.node.specifiers.length) {
-      return className === path.node.specifiers[0].exported.name;
+    if(path.node.type === 'ExportNamedDeclaration') {
+      if (path.node.specifiers && path.node.specifiers.length) {
+        return className === path.node.specifiers[0].exported.name;
+      } else if (path.node.declaration.declarations && path.node.declaration.declarations.length) {
+        return className === path.node.declaration.declarations[0].id.name;
+      }
     } else if(path.node.type === 'ExportDefaultDeclaration') {
       const decl = path.node.declaration
       if (t.isCallExpression(decl)) {
