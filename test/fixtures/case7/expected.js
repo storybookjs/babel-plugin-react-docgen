@@ -25,6 +25,7 @@ First.propTypes = {
 First.__docgenInfo = {
   "description": "",
   "methods": [],
+  "displayName": "First",
   "props": {
     "children": {
       "type": {

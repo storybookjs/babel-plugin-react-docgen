@@ -26,6 +26,7 @@ exports.default = _default;
 First.__docgenInfo = {
   "description": "",
   "methods": [],
+  "displayName": "First",
   "props": {
     "children": {
       "type": {
