@@ -1,57 +1,45 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.First = undefined;
+exports.First = void 0;
 
-var _react = require('react');
+var _react = _interopRequireWildcard(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 var Second = function Second() {
-  return _react2.default.createElement(
-    'div',
-    null,
-    'Sample'
-  );
+  return _react.default.createElement("div", null, "Sample");
 };
 
 var First = function First(_ref) {
   var children = _ref.children;
-  return _react2.default.createElement(
-    'div',
-    null,
-    children,
-    _react2.default.createElement(Second, null)
-  );
-};
-
-First.propTypes = {
-  children: _react.PropTypes.node
+  return _react.default.createElement("div", null, children, _react.default.createElement(Second, null));
 };
 
 exports.First = First;
+First.propTypes = {
+  children: _react.PropTypes.node
+};
 First.__docgenInfo = {
-  'description': '',
-  'methods': [],
-  'props': {
-    'children': {
-      'type': {
-        'name': 'node'
+  "description": "",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     }
   }
 };
 
-if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
-  STORYBOOK_REACT_CLASSES['test/fixtures/case7/actual.js'] = {
-    name: 'First',
+if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
+  STORYBOOK_REACT_CLASSES["test/fixtures/case7/actual.js"] = {
+    name: "First",
     docgenInfo: First.__docgenInfo,
-    path: 'test/fixtures/case7/actual.js'
+    path: "test/fixtures/case7/actual.js"
   };
 }

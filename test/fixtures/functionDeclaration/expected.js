@@ -1,58 +1,47 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireWildcard(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 var Child = function Child() {
-  return _react2.default.createElement(
-    'div',
-    null,
-    'Sample'
-  );
+  return _react.default.createElement("div", null, "Sample");
 };
 
 function FuncDeclaration(_ref) {
   var children = _ref.children;
-
-  return _react2.default.createElement(
-    'div',
-    null,
-    children,
-    _react2.default.createElement(Child, null)
-  );
+  return _react.default.createElement("div", null, children, _react.default.createElement(Child, null));
 }
 
 FuncDeclaration.propTypes = {
   children: _react.PropTypes.node
 };
-
-exports.default = FuncDeclaration;
+var _default = FuncDeclaration;
+exports.default = _default;
 FuncDeclaration.__docgenInfo = {
-  'description': '',
-  'methods': [],
-  'displayName': 'FuncDeclaration',
-  'props': {
-    'children': {
-      'type': {
-        'name': 'node'
+  "description": "",
+  "methods": [],
+  "displayName": "FuncDeclaration",
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     }
   }
 };
 
-if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
-  STORYBOOK_REACT_CLASSES['test/fixtures/functionDeclaration/actual.js'] = {
-    name: 'FuncDeclaration',
+if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
+  STORYBOOK_REACT_CLASSES["test/fixtures/functionDeclaration/actual.js"] = {
+    name: "FuncDeclaration",
     docgenInfo: FuncDeclaration.__docgenInfo,
-    path: 'test/fixtures/functionDeclaration/actual.js'
+    path: "test/fixtures/functionDeclaration/actual.js"
   };
 }

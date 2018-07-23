@@ -1,12 +1,11 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
+var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14,28 +13,21 @@ var Button = function Button(_ref) {
   var children = _ref.children,
       onClick = _ref.onClick,
       _ref$style = _ref.style,
-      style = _ref$style === undefined ? {} : _ref$style;
-
-  return _react2.default.createElement(
-    'button',
-    {
-      style: {},
-      onClick: onClick
-    },
-    children
-  );
+      style = _ref$style === void 0 ? {} : _ref$style;
+  return _react.default.createElement("button", {
+    style: {},
+    onClick: onClick
+  }, children);
 };
 
 Button.propTypes = {
-  children: _react2.default.PropTypes.string.isRequired,
-  onClick: _react2.default.PropTypes.func,
-  style: _react2.default.PropTypes.object
+  children: _react.default.PropTypes.string.isRequired,
+  onClick: _react.default.PropTypes.func,
+  style: _react.default.PropTypes.object
 };
-
-exports.default = Button;
-
-
-var A = void 0;
+var _default = Button;
+exports.default = _default;
+var A;
 A = [1, 2, 2, 2];
 
 function abc() {
@@ -43,42 +35,43 @@ function abc() {
     A = 'str';
   };
 }
+
 Button.__docgenInfo = {
-  'description': '',
-  'methods': [],
-  'props': {
-    'style': {
-      'defaultValue': {
-        'value': '{}',
-        'computed': false
+  "description": "",
+  "methods": [],
+  "props": {
+    "style": {
+      "defaultValue": {
+        "value": "{}",
+        "computed": false
       },
-      'type': {
-        'name': 'object'
+      "type": {
+        "name": "object"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     },
-    'children': {
-      'type': {
-        'name': 'string'
+    "children": {
+      "type": {
+        "name": "string"
       },
-      'required': true,
-      'description': ''
+      "required": true,
+      "description": ""
     },
-    'onClick': {
-      'type': {
-        'name': 'func'
+    "onClick": {
+      "type": {
+        "name": "func"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     }
   }
 };
 
-if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
-  STORYBOOK_REACT_CLASSES['test/fixtures/case4/actual.js'] = {
-    name: 'Button',
+if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
+  STORYBOOK_REACT_CLASSES["test/fixtures/case4/actual.js"] = {
+    name: "Button",
     docgenInfo: Button.__docgenInfo,
-    path: 'test/fixtures/case4/actual.js'
+    path: "test/fixtures/case4/actual.js"
   };
 }

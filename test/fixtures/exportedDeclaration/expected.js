@@ -1,73 +1,67 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Button = undefined;
+exports.Button = void 0;
 
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
+var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Button = exports.Button = function Button(_ref) {
+var Button = function Button(_ref) {
   var children = _ref.children,
       onClick = _ref.onClick,
       _ref$style = _ref.style,
-      style = _ref$style === undefined ? {} : _ref$style;
-
-  return _react2.default.createElement(
-    'button',
-    {
-      style: {},
-      onClick: onClick
-    },
-    children
-  );
+      style = _ref$style === void 0 ? {} : _ref$style;
+  return _react.default.createElement("button", {
+    style: {},
+    onClick: onClick
+  }, children);
 };
 
+exports.Button = Button;
 Button.propTypes = {
-  children: _react2.default.PropTypes.string.isRequired,
-  onClick: _react2.default.PropTypes.func,
-  style: _react2.default.PropTypes.object
+  children: _react.default.PropTypes.string.isRequired,
+  onClick: _react.default.PropTypes.func,
+  style: _react.default.PropTypes.object
 };
 Button.__docgenInfo = {
-  'description': '',
-  'methods': [],
-  'props': {
-    'style': {
-      'defaultValue': {
-        'value': '{}',
-        'computed': false
+  "description": "",
+  "methods": [],
+  "props": {
+    "style": {
+      "defaultValue": {
+        "value": "{}",
+        "computed": false
       },
-      'type': {
-        'name': 'object'
+      "type": {
+        "name": "object"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     },
-    'children': {
-      'type': {
-        'name': 'string'
+    "children": {
+      "type": {
+        "name": "string"
       },
-      'required': true,
-      'description': ''
+      "required": true,
+      "description": ""
     },
-    'onClick': {
-      'type': {
-        'name': 'func'
+    "onClick": {
+      "type": {
+        "name": "func"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     }
   }
 };
 
-if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
-  STORYBOOK_REACT_CLASSES['test/fixtures/exportedDeclaration/actual.js'] = {
-    name: 'Button',
+if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
+  STORYBOOK_REACT_CLASSES["test/fixtures/exportedDeclaration/actual.js"] = {
+    name: "Button",
     docgenInfo: Button.__docgenInfo,
-    path: 'test/fixtures/exportedDeclaration/actual.js'
+    path: "test/fixtures/exportedDeclaration/actual.js"
   };
 }
