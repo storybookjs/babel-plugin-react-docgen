@@ -9,6 +9,8 @@ Breaking changes:
 Bug fixes:
 * Fix for named export using incorrect local name in `export default ComponentName`
 [PR38](https://github.com/storybooks/babel-plugin-react-docgen/pull/38)
+* Relies on `react-docgen` for more React component detection functionalities
+[PR54](https://github.com/storybooks/babel-plugin-react-docgen/pull/54)
 
 ### v1.9.0
 04-April-2018
