@@ -31,7 +31,6 @@
     "babel-plugin"
   ],
   "dependencies": {
-    "babel-types": "^6.26.0",
     "lodash": "^4.17.10",
     "react-docgen": "^3.0.0-beta12"
   },
