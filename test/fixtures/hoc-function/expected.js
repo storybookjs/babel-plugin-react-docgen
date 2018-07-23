@@ -37,6 +37,7 @@ exports.default = _default;
 TestComponent.__docgenInfo = {
   "description": "",
   "methods": [],
+  "displayName": "TestComponent",
   "props": {
     "text": {
       "type": {

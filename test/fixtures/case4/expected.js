@@ -39,6 +39,7 @@ function abc() {
 Button.__docgenInfo = {
   "description": "",
   "methods": [],
+  "displayName": "Button",
   "props": {
     "style": {
       "defaultValue": {

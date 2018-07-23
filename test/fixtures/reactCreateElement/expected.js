@@ -37,6 +37,7 @@ exports.default = _default;
 Kitten.__docgenInfo = {
   "description": "",
   "methods": [],
+  "displayName": "Kitten",
   "props": {
     "isWide": {
       "defaultValue": {

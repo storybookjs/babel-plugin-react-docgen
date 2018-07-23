@@ -92,17 +92,17 @@ FlowTypeButton.__docgenInfo = {
   "displayName": "FlowTypeButton",
   "props": {
     "label": {
+      "required": true,
       "flowType": {
         "name": "number"
       },
-      "required": true,
       "description": "The text to be rendered in the button"
     },
     "thing": {
+      "required": false,
       "flowType": {
         "name": "string"
       },
-      "required": false,
       "description": "Some other prop"
     }
   }
