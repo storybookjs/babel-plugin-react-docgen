@@ -9,18 +9,20 @@
   ],
   "main": "lib/index.js",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "mocha": "^4.1.0",
+    "@babel/cli": "^7.0.0-beta.32",
+    "@babel/core": "^7.0.0-beta.32",
+    "@babel/preset-env": "^7.0.0-beta.32",
+    "@babel/preset-react": "^7.0.0-beta.32",
+    "@babel/preset-flow": "^7.0.0-beta.32",
+    "@babel/preset-stage-0": "^7.0.0-beta.32",
+    "@babel/register": "^7.0.0-beta.32",
+    "mocha": "^2.0.0",
     "recast": "^0.14.7"
   },
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "babel src -d lib",
-    "test": "mocha --require babel-register",
+    "build": "babel src --out-dir lib",
+    "test": "mocha --compilers js:@babel/register",
     "test:watch": "npm run test -- --watch",
     "prepare": "npm run test && npm run clean && npm run build"
   },
@@ -32,7 +34,7 @@
   ],
   "dependencies": {
     "lodash": "^4.17.10",
-    "react-docgen": "^3.0.0-beta12"
+    "react-docgen": "^3.0.0-rc.0"
   },
   "license": "MIT"
 }

@@ -1,40 +1,44 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.TOUCHSTART_TIMEOUT = undefined;
+exports.default = exports.TOUCHSTART_TIMEOUT = void 0;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _react = _interopRequireWildcard(require("react"));
 
-var _react = require('react');
+var _reactAddonsShallowCompare = _interopRequireDefault(require("react-addons-shallow-compare"));
 
-var _react2 = _interopRequireDefault(_react);
+var _reactMomentProptypes = _interopRequireDefault(require("react-moment-proptypes"));
 
-var _reactAddonsShallowCompare = require('react-addons-shallow-compare');
-
-var _reactAddonsShallowCompare2 = _interopRequireDefault(_reactAddonsShallowCompare);
-
-var _reactMomentProptypes = require('react-moment-proptypes');
-
-var _reactMomentProptypes2 = _interopRequireDefault(_reactMomentProptypes);
-
-var _moment = require('moment');
-
-var _moment2 = _interopRequireDefault(_moment);
+var _moment = _interopRequireDefault(require("moment"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var TOUCHSTART_TIMEOUT = exports.TOUCHSTART_TIMEOUT = 200;
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var TOUCHSTART_TIMEOUT = 200;
+exports.TOUCHSTART_TIMEOUT = TOUCHSTART_TIMEOUT;
 var propTypes = {
-  day: _reactMomentProptypes2.default.momentObj,
+  day: _reactMomentProptypes.default.momentObj,
   modifiers: _react.PropTypes.arrayOf(_react.PropTypes.string),
   onDayClick: _react.PropTypes.func,
   onDayMouseDown: _react.PropTypes.func,
@@ -46,9 +50,8 @@ var propTypes = {
   onDayTouchTap: _react.PropTypes.func,
   'hypen-dash': _react.PropTypes.string
 };
-
 var defaultProps = {
-  day: (0, _moment2.default)(),
+  day: (0, _moment.default)(),
   modifiers: [],
   onDayClick: function onDayClick() {},
   onDayMouseDown: function onDayMouseDown() {},
@@ -58,26 +61,28 @@ var defaultProps = {
   onDayTouchStart: function onDayTouchStart() {},
   onDayTouchEnd: function onDayTouchEnd() {},
   onDayTouchTap: function onDayTouchTap() {},
-
   'hypen-dash': 'hello'
 };
 
-var CalendarDay = function (_React$Component) {
+var CalendarDay =
+/*#__PURE__*/
+function (_React$Component) {
   _inherits(CalendarDay, _React$Component);
 
   function CalendarDay(props) {
+    var _this;
+
     _classCallCheck(this, CalendarDay);
 
-    var _this = _possibleConstructorReturn(this, (CalendarDay.__proto__ || Object.getPrototypeOf(CalendarDay)).call(this, props));
-
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CalendarDay).call(this, props));
     _this.hasActiveTouchStart = false;
     return _this;
   }
 
   _createClass(CalendarDay, [{
-    key: 'shouldComponentUpdate',
+    key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextProps, nextState) {
-      return (0, _reactAddonsShallowCompare2.default)(this, nextProps, nextState);
+      return (0, _reactAddonsShallowCompare.default)(this, nextProps, nextState);
     }
     /**
      * Some description about how handleDayClick works
@@ -88,32 +93,32 @@ var CalendarDay = function (_React$Component) {
      */
 
   }, {
-    key: 'handleDayClick',
+    key: "handleDayClick",
     value: function handleDayClick(day, modifiers, e) {
       this.props.onDayClick(day, modifiers, e);
     }
   }, {
-    key: 'handleDayMouseDown',
+    key: "handleDayMouseDown",
     value: function handleDayMouseDown(day, modifiers, e) {
       this.props.onDayMouseDown(day, modifiers, e);
     }
   }, {
-    key: 'handleDayMouseUp',
+    key: "handleDayMouseUp",
     value: function handleDayMouseUp(day, modifiers, e) {
       this.props.onDayMouseUp(day, modifiers, e);
     }
   }, {
-    key: 'handleDayMouseEnter',
+    key: "handleDayMouseEnter",
     value: function handleDayMouseEnter(day, modifiers, e) {
       this.props.onDayMouseEnter(day, modifiers, e);
     }
   }, {
-    key: 'handleDayMouseLeave',
+    key: "handleDayMouseLeave",
     value: function handleDayMouseLeave(day, modifiers, e) {
       this.props.onDayMouseLeave(day, modifiers, e);
     }
   }, {
-    key: 'handleDayTouchStart',
+    key: "handleDayTouchStart",
     value: function handleDayTouchStart(day, modifiers, e) {
       var _this2 = this;
 
@@ -121,11 +126,10 @@ var CalendarDay = function (_React$Component) {
       setTimeout(function () {
         _this2.hasActiveTouchStart = false;
       }, TOUCHSTART_TIMEOUT);
-
       this.props.onDayTouchStart(day, modifiers, e);
     }
   }, {
-    key: 'handleDayTouchEnd',
+    key: "handleDayTouchEnd",
     value: function handleDayTouchEnd(day, modifiers, e) {
       if (this.hasActiveTouchStart) {
         this.hasActiveTouchStart = false;
@@ -135,337 +139,327 @@ var CalendarDay = function (_React$Component) {
       this.props.onDayTouchEnd(day, modifiers, e);
     }
   }, {
-    key: 'handleDayTouchTap',
+    key: "handleDayTouchTap",
     value: function handleDayTouchTap(day, modifiers, e) {
       this.props.onDayTouchTap(day, modifiers, e);
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       var _this3 = this;
 
-      var _props = this.props,
-          day = _props.day,
-          modifiers = _props.modifiers;
-
-
-      return _react2.default.createElement(
-        'div',
-        {
-          className: 'CalendarDay',
-          onMouseEnter: function onMouseEnter(e) {
-            return _this3.handleDayMouseEnter(day, modifiers, e);
-          },
-          onMouseLeave: function onMouseLeave(e) {
-            return _this3.handleDayMouseLeave(day, modifiers, e);
-          },
-          onMouseDown: function onMouseDown(e) {
-            return _this3.handleDayMouseDown(day, modifiers, e);
-          },
-          onMouseUp: function onMouseUp(e) {
-            return _this3.handleDayMouseUp(day, modifiers, e);
-          },
-          onClick: function onClick(e) {
-            return _this3.handleDayClick(day, modifiers, e);
-          },
-          onTouchStart: function onTouchStart(e) {
-            return _this3.handleDayTouchStart(day, modifiers, e);
-          },
-          onTouchEnd: function onTouchEnd(e) {
-            return _this3.handleDayTouchEnd(day, modifiers, e);
-          }
+      var _this$props = this.props,
+          day = _this$props.day,
+          modifiers = _this$props.modifiers;
+      return _react.default.createElement("div", {
+        className: "CalendarDay",
+        onMouseEnter: function onMouseEnter(e) {
+          return _this3.handleDayMouseEnter(day, modifiers, e);
         },
-        _react2.default.createElement(
-          'span',
-          { className: 'CalendarDay__day' },
-          day.format('D')
-        )
-      );
+        onMouseLeave: function onMouseLeave(e) {
+          return _this3.handleDayMouseLeave(day, modifiers, e);
+        },
+        onMouseDown: function onMouseDown(e) {
+          return _this3.handleDayMouseDown(day, modifiers, e);
+        },
+        onMouseUp: function onMouseUp(e) {
+          return _this3.handleDayMouseUp(day, modifiers, e);
+        },
+        onClick: function onClick(e) {
+          return _this3.handleDayClick(day, modifiers, e);
+        },
+        onTouchStart: function onTouchStart(e) {
+          return _this3.handleDayTouchStart(day, modifiers, e);
+        },
+        onTouchEnd: function onTouchEnd(e) {
+          return _this3.handleDayTouchEnd(day, modifiers, e);
+        }
+      }, _react.default.createElement("span", {
+        className: "CalendarDay__day"
+      }, day.format('D')));
     }
   }]);
 
   return CalendarDay;
-}(_react2.default.Component);
+}(_react.default.Component);
 
 exports.default = CalendarDay;
-
-
 CalendarDay.propTypes = propTypes;
 CalendarDay.defaultProps = defaultProps;
 CalendarDay.__docgenInfo = {
-  'description': '',
-  'methods': [{
-    'name': 'handleDayClick',
-    'docblock': 'Some description about how handleDayClick works\n@param  {Object} day this is a moment js object\n@param  {number|string} modifiers hello world\n@param  {number=} e events yo\n@return {*} wut return',
-    'modifiers': [],
-    'params': [{
-      'name': 'day',
-      'description': 'this is a moment js object',
-      'type': {
-        'name': 'Object'
+  "description": "",
+  "methods": [{
+    "name": "handleDayClick",
+    "docblock": "Some description about how handleDayClick works\n@param  {Object} day this is a moment js object\n@param  {number|string} modifiers hello world\n@param  {number=} e events yo\n@return {*} wut return",
+    "modifiers": [],
+    "params": [{
+      "name": "day",
+      "description": "this is a moment js object",
+      "type": {
+        "name": "Object"
       }
     }, {
-      'name': 'modifiers',
-      'description': 'hello world',
-      'type': {
-        'name': 'union',
-        'value': ['number', 'string']
+      "name": "modifiers",
+      "description": "hello world",
+      "type": {
+        "name": "union",
+        "value": ["number", "string"]
       }
     }, {
-      'name': 'e',
-      'description': 'events yo',
-      'type': {
-        'name': 'number'
+      "name": "e",
+      "description": "events yo",
+      "type": {
+        "name": "number"
       },
-      'optional': true
+      "optional": true
     }],
-    'returns': {
-      'description': 'wut return',
-      'type': {
-        'name': 'mixed'
+    "returns": {
+      "description": "wut return",
+      "type": {
+        "name": "mixed"
       }
     },
-    'description': 'Some description about how handleDayClick works'
+    "description": "Some description about how handleDayClick works"
   }, {
-    'name': 'handleDayMouseDown',
-    'docblock': null,
-    'modifiers': [],
-    'params': [{
-      'name': 'day',
-      'type': null
+    "name": "handleDayMouseDown",
+    "docblock": null,
+    "modifiers": [],
+    "params": [{
+      "name": "day",
+      "type": null
     }, {
-      'name': 'modifiers',
-      'type': null
+      "name": "modifiers",
+      "type": null
     }, {
-      'name': 'e',
-      'type': null
+      "name": "e",
+      "type": null
     }],
-    'returns': null
+    "returns": null
   }, {
-    'name': 'handleDayMouseUp',
-    'docblock': null,
-    'modifiers': [],
-    'params': [{
-      'name': 'day',
-      'type': null
+    "name": "handleDayMouseUp",
+    "docblock": null,
+    "modifiers": [],
+    "params": [{
+      "name": "day",
+      "type": null
     }, {
-      'name': 'modifiers',
-      'type': null
+      "name": "modifiers",
+      "type": null
     }, {
-      'name': 'e',
-      'type': null
+      "name": "e",
+      "type": null
     }],
-    'returns': null
+    "returns": null
   }, {
-    'name': 'handleDayMouseEnter',
-    'docblock': null,
-    'modifiers': [],
-    'params': [{
-      'name': 'day',
-      'type': null
+    "name": "handleDayMouseEnter",
+    "docblock": null,
+    "modifiers": [],
+    "params": [{
+      "name": "day",
+      "type": null
     }, {
-      'name': 'modifiers',
-      'type': null
+      "name": "modifiers",
+      "type": null
     }, {
-      'name': 'e',
-      'type': null
+      "name": "e",
+      "type": null
     }],
-    'returns': null
+    "returns": null
   }, {
-    'name': 'handleDayMouseLeave',
-    'docblock': null,
-    'modifiers': [],
-    'params': [{
-      'name': 'day',
-      'type': null
+    "name": "handleDayMouseLeave",
+    "docblock": null,
+    "modifiers": [],
+    "params": [{
+      "name": "day",
+      "type": null
     }, {
-      'name': 'modifiers',
-      'type': null
+      "name": "modifiers",
+      "type": null
     }, {
-      'name': 'e',
-      'type': null
+      "name": "e",
+      "type": null
     }],
-    'returns': null
+    "returns": null
   }, {
-    'name': 'handleDayTouchStart',
-    'docblock': null,
-    'modifiers': [],
-    'params': [{
-      'name': 'day',
-      'type': null
+    "name": "handleDayTouchStart",
+    "docblock": null,
+    "modifiers": [],
+    "params": [{
+      "name": "day",
+      "type": null
     }, {
-      'name': 'modifiers',
-      'type': null
+      "name": "modifiers",
+      "type": null
     }, {
-      'name': 'e',
-      'type': null
+      "name": "e",
+      "type": null
     }],
-    'returns': null
+    "returns": null
   }, {
-    'name': 'handleDayTouchEnd',
-    'docblock': null,
-    'modifiers': [],
-    'params': [{
-      'name': 'day',
-      'type': null
+    "name": "handleDayTouchEnd",
+    "docblock": null,
+    "modifiers": [],
+    "params": [{
+      "name": "day",
+      "type": null
     }, {
-      'name': 'modifiers',
-      'type': null
+      "name": "modifiers",
+      "type": null
     }, {
-      'name': 'e',
-      'type': null
+      "name": "e",
+      "type": null
     }],
-    'returns': null
+    "returns": null
   }, {
-    'name': 'handleDayTouchTap',
-    'docblock': null,
-    'modifiers': [],
-    'params': [{
-      'name': 'day',
-      'type': null
+    "name": "handleDayTouchTap",
+    "docblock": null,
+    "modifiers": [],
+    "params": [{
+      "name": "day",
+      "type": null
     }, {
-      'name': 'modifiers',
-      'type': null
+      "name": "modifiers",
+      "type": null
     }, {
-      'name': 'e',
-      'type': null
+      "name": "e",
+      "type": null
     }],
-    'returns': null
+    "returns": null
   }],
-  'displayName': 'CalendarDay',
-  'props': {
-    'day': {
-      'defaultValue': {
-        'value': 'moment()',
-        'computed': true
+  "displayName": "CalendarDay",
+  "props": {
+    "day": {
+      "defaultValue": {
+        "value": "moment()",
+        "computed": true
       },
-      'type': {
-        'name': 'custom',
-        'raw': 'momentPropTypes.momentObj'
+      "type": {
+        "name": "custom",
+        "raw": "momentPropTypes.momentObj"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     },
-    'modifiers': {
-      'defaultValue': {
-        'value': '[]',
-        'computed': false
+    "modifiers": {
+      "defaultValue": {
+        "value": "[]",
+        "computed": false
       },
-      'type': {
-        'name': 'arrayOf',
-        'value': {
-          'name': 'string'
+      "type": {
+        "name": "arrayOf",
+        "value": {
+          "name": "string"
         }
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     },
-    'onDayClick': {
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
+    "onDayClick": {
+      "defaultValue": {
+        "value": "function() {}",
+        "computed": false
       },
-      'type': {
-        'name': 'func'
+      "type": {
+        "name": "func"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     },
-    'onDayMouseDown': {
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
+    "onDayMouseDown": {
+      "defaultValue": {
+        "value": "function() {}",
+        "computed": false
       },
-      'type': {
-        'name': 'func'
+      "type": {
+        "name": "func"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     },
-    'onDayMouseUp': {
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
+    "onDayMouseUp": {
+      "defaultValue": {
+        "value": "function() {}",
+        "computed": false
       },
-      'type': {
-        'name': 'func'
+      "type": {
+        "name": "func"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     },
-    'onDayMouseEnter': {
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
+    "onDayMouseEnter": {
+      "defaultValue": {
+        "value": "function() {}",
+        "computed": false
       },
-      'type': {
-        'name': 'func'
+      "type": {
+        "name": "func"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     },
-    'onDayMouseLeave': {
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
+    "onDayMouseLeave": {
+      "defaultValue": {
+        "value": "function() {}",
+        "computed": false
       },
-      'type': {
-        'name': 'func'
+      "type": {
+        "name": "func"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     },
-    'onDayTouchStart': {
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
+    "onDayTouchStart": {
+      "defaultValue": {
+        "value": "function() {}",
+        "computed": false
       },
-      'type': {
-        'name': 'func'
+      "type": {
+        "name": "func"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     },
-    'onDayTouchEnd': {
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
+    "onDayTouchEnd": {
+      "defaultValue": {
+        "value": "function() {}",
+        "computed": false
       },
-      'type': {
-        'name': 'func'
+      "type": {
+        "name": "func"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     },
-    'onDayTouchTap': {
-      'defaultValue': {
-        'value': 'function() {}',
-        'computed': false
+    "onDayTouchTap": {
+      "defaultValue": {
+        "value": "function() {}",
+        "computed": false
       },
-      'type': {
-        'name': 'func'
+      "type": {
+        "name": "func"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     },
-    'hypen-dash': {
-      'defaultValue': {
-        'value': '\'hello\'',
-        'computed': false
+    "hypen-dash": {
+      "defaultValue": {
+        "value": "'hello'",
+        "computed": false
       },
-      'type': {
-        'name': 'string'
+      "type": {
+        "name": "string"
       },
-      'required': false,
-      'description': ''
+      "required": false,
+      "description": ""
     }
   }
 };
 
-if (typeof STORYBOOK_REACT_CLASSES !== 'undefined') {
-  STORYBOOK_REACT_CLASSES['test/fixtures/case1/actual.js'] = {
-    name: 'CalendarDay',
+if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
+  STORYBOOK_REACT_CLASSES["test/fixtures/case1/actual.js"] = {
+    name: "CalendarDay",
     docgenInfo: CalendarDay.__docgenInfo,
-    path: 'test/fixtures/case1/actual.js'
+    path: "test/fixtures/case1/actual.js"
   };
 }
