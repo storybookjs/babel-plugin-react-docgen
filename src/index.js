@@ -43,6 +43,13 @@ function injectReactDocgenInfo(path, state, code, t) {
 
   docgenResults.forEach(function(docgenResult, index) {
     let exportName = docgenResult.actualName;
+
+    // If the result doesn't have an actualName,
+    // it's probably on arrow functions.
+    if (!exportName) {
+      return;
+    }
+
     const docNode = buildObjectExpression(docgenResult, t);
     const docgenInfo = t.expressionStatement(
       t.assignmentExpression(
