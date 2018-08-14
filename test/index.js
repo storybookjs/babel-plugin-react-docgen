@@ -21,12 +21,12 @@ describe('Add propType doc to react classes', () => {
             "@babel/env",
             "@babel/flow",
             "@babel/react",
-            "@babel/stage-0"
           ],
           plugins: [
             [plugin, {
               "DOC_GEN_COLLECTION_NAME": "STORYBOOK_REACT_CLASSES"
-            }]
+            }],
+            "@babel/plugin-proposal-class-properties"
           ],
           babelrc: false
         };

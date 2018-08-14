@@ -9,14 +9,14 @@
   ],
   "main": "lib/index.js",
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.40",
-    "@babel/core": "^7.0.0-beta.54",
-    "@babel/preset-env": "^7.0.0-beta.54",
-    "@babel/preset-react": "^7.0.0-beta.54",
-    "@babel/preset-flow": "^7.0.0-beta.54",
-    "@babel/preset-stage-0": "^7.0.0-beta.54",
-    "@babel/register": "^7.0.0-beta.54",
-    "mocha": "^2.0.0",
+    "@babel/cli": "^7.0.0-rc.1",
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
+    "@babel/preset-flow": "^7.0.0-rc.1",
+    "@babel/preset-react": "^7.0.0-rc.1",
+    "@babel/register": "^7.0.0-rc.1",
+    "mocha": "^5.2.0",
     "recast": "^0.14.7"
   },
   "scripts": {
