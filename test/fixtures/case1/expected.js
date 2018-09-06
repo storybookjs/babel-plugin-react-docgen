@@ -197,14 +197,20 @@ CalendarDay.__docgenInfo = {
       "description": "this is a moment js object",
       "type": {
         "name": "Object"
-      }
+      },
+      "optional": false
     }, {
       "name": "modifiers",
       "description": "hello world",
       "type": {
         "name": "union",
-        "value": ["number", "string"]
-      }
+        "elements": [{
+          "name": "number"
+        }, {
+          "name": "string"
+        }]
+      },
+      "optional": false
     }, {
       "name": "e",
       "description": "events yo",
