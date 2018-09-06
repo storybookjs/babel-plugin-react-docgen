@@ -11,6 +11,10 @@ Bug fixes:
 [PR38](https://github.com/storybooks/babel-plugin-react-docgen/pull/38)
 * Relies on `react-docgen` for more React component detection functionalities
 [PR54](https://github.com/storybooks/babel-plugin-react-docgen/pull/54)
+* Fix crash on `name`
+[PR58](https://github.com/storybooks/babel-plugin-react-docgen/pull/58)
+* Upgraded to Babel 7 and react-docgen 3.0-rc.1
+[PR59](https://github.com/storybooks/babel-plugin-react-docgen/pull/59)
 
 ### v1.9.0
 04-April-2018
