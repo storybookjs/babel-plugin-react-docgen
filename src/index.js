@@ -5,7 +5,6 @@ import * as reactDocgenHandlers from 'react-docgen/dist/handlers';
 import actualNameHandler from './actualNameHandler';
 
 const defaultHandlers = Object.values(reactDocgenHandlers).map(handler => handler);
-const handlers = [...defaultHandlers, actualNameHandler]
 
 export default function({ types: t }) {
   return {
@@ -28,6 +27,15 @@ function injectReactDocgenInfo(path, state, code, t) {
     if (state.opts.resolver) {
       resolver = ReactDocgen.resolver[state.opts.resolver];
     }
+
+    let customHandlers = []
+    if (state.opts.handlers) {
+      state.opts.handlers.forEach(handler => {
+        customHandlers.push(require(handler))
+      })
+    }
+
+    const handlers = [...defaultHandlers, ...customHandlers, actualNameHandler]
     docgenResults = ReactDocgen.parse(code, resolver, handlers);
 
     if (state.opts.removeMethods) {
