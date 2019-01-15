@@ -24,7 +24,8 @@ describe('Add propType doc to react classes', () => {
           ],
           plugins: [
             [plugin, {
-              "DOC_GEN_COLLECTION_NAME": "STORYBOOK_REACT_CLASSES"
+              "DOC_GEN_COLLECTION_NAME": "STORYBOOK_REACT_CLASSES",
+              handlers: ["react-docgen-deprecation-handler"]
             }],
             "@babel/plugin-proposal-class-properties"
           ],
