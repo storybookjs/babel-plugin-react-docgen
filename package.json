@@ -16,7 +16,8 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "react-docgen-deprecation-handler": "1.1.1"
   },
   "scripts": {
     "clean": "rm -rf lib",
