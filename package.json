@@ -16,8 +16,7 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "mocha": "^5.2.0",
-    "recast": "^0.14.7"
+    "mocha": "^5.2.0"
   },
   "scripts": {
     "clean": "rm -rf lib",
@@ -34,7 +33,8 @@
   ],
   "dependencies": {
     "lodash": "^4.17.10",
-    "react-docgen": "^3.0.0"
+    "react-docgen": "^3.0.0",
+    "recast": "^0.14.7"
   },
   "license": "MIT"
 }
