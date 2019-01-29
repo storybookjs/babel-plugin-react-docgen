@@ -1,5 +1,15 @@
 # ChangeLog
 
+### v2.0.2
+29-01-2019
+
+* Fix #62 where `recast` is not in the right dependency tree
+
+### v2.0.1
+29-01-2019
+
+* Updated to use release version of `react-docgen@^3.0.0`
+
 ### v2.0.0
 
 Breaking changes:
