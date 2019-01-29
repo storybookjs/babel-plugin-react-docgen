@@ -3,7 +3,7 @@
 ### v2.0.2
 29-01-2019
 
-* Fix #62 where `recast` is not in the right dependency tree
+* Fixes #62 where `recast` is not in the right dependency tree
 
 ### v2.0.1
 29-01-2019
