@@ -34,7 +34,7 @@
   ],
   "dependencies": {
     "lodash": "^4.17.10",
-    "react-docgen": "^3.0.0-rc.1"
+    "react-docgen": "^3.0.0"
   },
   "license": "MIT"
 }
