@@ -1,5 +1,15 @@
 # ChangeLog
 
+### v3.0.0
+27-03-2019
+
+Breaking changes:
+* Upgrade to `react-docgen@4.1.0`
+
+Bug fixes:
+* Fixes #67 where `forwardRef` wrapped components are not detected
+* Upgrade to `lodash@4.17.10` to fix security vulnerability
+
 ### v2.0.2
 29-01-2019
 
