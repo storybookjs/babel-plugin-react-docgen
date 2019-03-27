@@ -10,9 +10,9 @@
   "main": "lib/index.js",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-env": "^7.4.2",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
@@ -32,7 +32,7 @@
     "babel-plugin"
   ],
   "dependencies": {
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "react-docgen": "^4.1.0",
     "recast": "^0.14.7"
   },
