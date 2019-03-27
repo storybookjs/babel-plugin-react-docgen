@@ -11,7 +11,7 @@
  * This is heavily based on the react-docgen `displayNameHandler` but instead defines an `actualName` property on the
  * generated docs that is taken first from the component's actual name. This addresses an issue where the name that
  * the generated docs are stored under is incorrectly named with the `displayName` and not the component's actual name.
- *  
+ *
  */
 
 import { utils } from 'react-docgen';
@@ -30,7 +30,9 @@ export default function actualNameHandler(documentation, path) {
     documentation.set('actualName', getNameOrValue(path.get('id')));
   } else if (
     types.ArrowFunctionExpression.check(path.node) ||
-    types.FunctionExpression.check(path.node)
+    types.FunctionExpression.check(path.node) ||
+    // React.forwardRef
+    types.CallExpression.check(path.node)
   ) {
     if (types.VariableDeclarator.check(path.parentPath.node)) {
       documentation.set('actualName', getNameOrValue(path.parentPath.get('id')));
