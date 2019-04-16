@@ -104,7 +104,8 @@ So, we allow you to collect all the docgen info into a global collection. To do 
       {
         "DOC_GEN_COLLECTION_NAME": "MY_REACT_DOCS",
         "resolver": "findAllComponentDefinitions", // optional (default: findAllComponentDefinitions)
-        "removeMethods": true // optional (default: false)
+        "removeMethods": true, // optional (default: false)
+        "handlers:": ["react-docgen-deprecation-handler"] // optional array of custom handlers (use the string name of the package in the array)
       }
     ]
   ]
