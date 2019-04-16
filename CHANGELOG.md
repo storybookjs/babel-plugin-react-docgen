@@ -1,5 +1,11 @@
 # ChangeLog
 
+### v3.1.0
+16-04-2019
+
+New Features:
+* Add support for custom React Docgen handlers #64, #65
+
 ### v3.0.0
 27-03-2019
 
