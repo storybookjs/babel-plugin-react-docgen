@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.TOUCHSTART_TIMEOUT = void 0;
+exports["default"] = exports.TOUCHSTART_TIMEOUT = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -13,9 +13,9 @@ var _reactMomentProptypes = _interopRequireDefault(require("react-moment-proptyp
 
 var _moment = _interopRequireDefault(require("moment"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -38,7 +38,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var TOUCHSTART_TIMEOUT = 200;
 exports.TOUCHSTART_TIMEOUT = TOUCHSTART_TIMEOUT;
 var propTypes = {
-  day: _reactMomentProptypes.default.momentObj,
+  day: _reactMomentProptypes["default"].momentObj,
   modifiers: _react.PropTypes.arrayOf(_react.PropTypes.string),
   onDayClick: _react.PropTypes.func,
   onDayMouseDown: _react.PropTypes.func,
@@ -51,7 +51,7 @@ var propTypes = {
   'hypen-dash': _react.PropTypes.string
 };
 var defaultProps = {
-  day: (0, _moment.default)(),
+  day: (0, _moment["default"])(),
   modifiers: [],
   onDayClick: function onDayClick() {},
   onDayMouseDown: function onDayMouseDown() {},
@@ -82,7 +82,7 @@ function (_React$Component) {
   _createClass(CalendarDay, [{
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextProps, nextState) {
-      return (0, _reactAddonsShallowCompare.default)(this, nextProps, nextState);
+      return (0, _reactAddonsShallowCompare["default"])(this, nextProps, nextState);
     }
     /**
      * Some description about how handleDayClick works
@@ -151,7 +151,7 @@ function (_React$Component) {
       var _this$props = this.props,
           day = _this$props.day,
           modifiers = _this$props.modifiers;
-      return _react.default.createElement("div", {
+      return _react["default"].createElement("div", {
         className: "CalendarDay",
         onMouseEnter: function onMouseEnter(e) {
           return _this3.handleDayMouseEnter(day, modifiers, e);
@@ -174,16 +174,16 @@ function (_React$Component) {
         onTouchEnd: function onTouchEnd(e) {
           return _this3.handleDayTouchEnd(day, modifiers, e);
         }
-      }, _react.default.createElement("span", {
+      }, _react["default"].createElement("span", {
         className: "CalendarDay__day"
       }, day.format('D')));
     }
   }]);
 
   return CalendarDay;
-}(_react.default.Component);
+}(_react["default"].Component);
 
-exports.default = CalendarDay;
+exports["default"] = CalendarDay;
 CalendarDay.propTypes = propTypes;
 CalendarDay.defaultProps = defaultProps;
 CalendarDay.__docgenInfo = {

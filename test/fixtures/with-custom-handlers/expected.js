@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 require("./styles.css");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -44,21 +44,21 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var children = this.props.children;
-      return _react.default.createElement("div", {
+      return _react["default"].createElement("div", {
         className: "error-box"
       }, children);
     }
   }]);
 
   return ErrorBox;
-}(_react.default.Component);
+}(_react["default"].Component);
 
 ErrorBox.propTypes = {
   /** @deprecated This is the description for prop */
-  deprecatedProp: _react.default.PropTypes.number
+  deprecatedProp: _react["default"].PropTypes.number
 };
 var _default = ErrorBox;
-exports.default = _default;
+exports["default"] = _default;
 ErrorBox.__docgenInfo = {
   "description": "",
   "methods": [],

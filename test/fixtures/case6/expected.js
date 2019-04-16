@@ -7,7 +7,7 @@ exports.hoc = hoc;
 
 var _react = _interopRequireDefault(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -29,11 +29,11 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function hoc(Inner) {
   var C1 = function C1(props) {
-    return _react.default.createElement(ActualC1, props);
+    return _react["default"].createElement(ActualC1, props);
   };
 
   var C2 = function C2(props) {
-    return _react.default.createElement(ActualC2, props);
+    return _react["default"].createElement(ActualC2, props);
   };
 
   return {
@@ -56,12 +56,12 @@ function (_React$Component) {
   _createClass(ActualC1, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null);
+      return _react["default"].createElement("div", null);
     }
   }]);
 
   return ActualC1;
-}(_react.default.Component);
+}(_react["default"].Component);
 
 var ActualC2 =
 /*#__PURE__*/
@@ -77,9 +77,9 @@ function (_React$Component2) {
   _createClass(ActualC2, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null);
+      return _react["default"].createElement("div", null);
     }
   }]);
 
   return ActualC2;
-}(_react.default.Component);
+}(_react["default"].Component);

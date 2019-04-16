@@ -7,14 +7,14 @@ exports.Button = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Button = function Button(_ref) {
   var children = _ref.children,
       onClick = _ref.onClick,
       _ref$style = _ref.style,
       style = _ref$style === void 0 ? {} : _ref$style;
-  return _react.default.createElement("button", {
+  return _react["default"].createElement("button", {
     style: {},
     onClick: onClick
   }, children);
@@ -22,9 +22,9 @@ var Button = function Button(_ref) {
 
 exports.Button = Button;
 Button.propTypes = {
-  children: _react.default.PropTypes.string.isRequired,
-  onClick: _react.default.PropTypes.func,
-  style: _react.default.PropTypes.object
+  children: _react["default"].PropTypes.string.isRequired,
+  onClick: _react["default"].PropTypes.func,
+  style: _react["default"].PropTypes.object
 };
 Button.__docgenInfo = {
   "description": "",
