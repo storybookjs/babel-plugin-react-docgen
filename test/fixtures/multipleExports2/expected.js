@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -17,7 +17,7 @@ var _OlStyled = _interopRequireDefault(require("./style/OlStyled"));
 
 var _LiStyled = _interopRequireDefault(require("./style/LiStyled"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -78,52 +78,52 @@ function (_React$Component) {
         warning: warning,
         rtl: rtl
       };
-      return _react.default.createElement(_BreadcrumbStyled.default, this.props, _react.default.createElement(_OlStyled.default, themeProps, elements.map(function (item, index) {
-        return _react.default.createElement(_LiStyled.default, _extends({
+      return _react["default"].createElement(_BreadcrumbStyled["default"], this.props, _react["default"].createElement(_OlStyled["default"], themeProps, elements.map(function (item, index) {
+        return _react["default"].createElement(_LiStyled["default"], _extends({
           key: index
-        }, themeProps), _react.default.createElement(_reactRouterDom.Link, {
+        }, themeProps), _react["default"].createElement(_reactRouterDom.Link, {
           to: item.path
         }, item.name));
-      }), _react.default.createElement(_LiStyled.default, themeProps, lastElement.name)));
+      }), _react["default"].createElement(_LiStyled["default"], themeProps, lastElement.name)));
     }
   }]);
 
   return Breadcrumb;
-}(_react.default.Component);
+}(_react["default"].Component);
 
 Breadcrumb.propTypes = {
   /** array of objects */
-  items: _propTypes.default.array.isRequired,
+  items: _propTypes["default"].array.isRequired,
 
   /** rtl is true component show  in right side of the window, default is false (from left side). */
-  rtl: _propTypes.default.bool,
+  rtl: _propTypes["default"].bool,
 
   /** Boolean indicating whether the component renders with Theme.primary color */
-  primary: _propTypes.default.bool,
+  primary: _propTypes["default"].bool,
 
   /** Boolean indicating whether the component renders with Theme.secondary color */
-  secondary: _propTypes.default.bool,
+  secondary: _propTypes["default"].bool,
 
   /** Boolean indicating whether the component renders with Theme.info color */
-  info: _propTypes.default.bool,
+  info: _propTypes["default"].bool,
 
   /** Boolean indicating whether the component renders with Theme.warning color  */
-  warning: _propTypes.default.bool,
+  warning: _propTypes["default"].bool,
 
   /** Boolean indicating whether the component renders with Theme.danger color  */
-  danger: _propTypes.default.bool,
+  danger: _propTypes["default"].bool,
 
   /** Boolean indicating whether the component renders with Theme.success color */
-  success: _propTypes.default.bool,
+  success: _propTypes["default"].bool,
 
   /** The inline-styles for the root element. */
-  style: _propTypes.default.object,
+  style: _propTypes["default"].object,
 
   /** The className for the root element. */
-  className: _propTypes.default.string,
+  className: _propTypes["default"].string,
 
   /** The color renders with Theme.foreColor . */
-  foreColor: _propTypes.default.string
+  foreColor: _propTypes["default"].string
 };
 Breadcrumb.defaultProps = {
   rtl: false,
@@ -138,7 +138,7 @@ Breadcrumb.defaultProps = {
   foreColor: ''
 };
 var _default = Breadcrumb;
-exports.default = _default;
+exports["default"] = _default;
 Breadcrumb.__docgenInfo = {
   "description": "",
   "methods": [],

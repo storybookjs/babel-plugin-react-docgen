@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -62,7 +62,7 @@ Component.propTypes = {
 
 var _default = withHoc()(deeperHoc(Component));
 
-exports.default = _default;
+exports["default"] = _default;
 Component.__docgenInfo = {
   "description": "Super tiny component",
   "methods": [],

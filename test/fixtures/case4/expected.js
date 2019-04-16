@@ -3,30 +3,30 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Button = function Button(_ref) {
   var children = _ref.children,
       onClick = _ref.onClick,
       _ref$style = _ref.style,
       style = _ref$style === void 0 ? {} : _ref$style;
-  return _react.default.createElement("button", {
+  return _react["default"].createElement("button", {
     style: {},
     onClick: onClick
   }, children);
 };
 
 Button.propTypes = {
-  children: _react.default.PropTypes.string.isRequired,
-  onClick: _react.default.PropTypes.func,
-  style: _react.default.PropTypes.object
+  children: _react["default"].PropTypes.string.isRequired,
+  onClick: _react["default"].PropTypes.func,
+  style: _react["default"].PropTypes.object
 };
 var _default = Button;
-exports.default = _default;
+exports["default"] = _default;
 var A;
 A = [1, 2, 2, 2];
 

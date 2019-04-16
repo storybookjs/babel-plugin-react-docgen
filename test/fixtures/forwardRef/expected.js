@@ -7,15 +7,15 @@ exports.ErrorBox = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * forwardRef Wrapped Component
  */
-var ErrorBox = _react.default.forwardRef(function (_ref, ref) {
+var ErrorBox = _react["default"].forwardRef(function (_ref, ref) {
   var children = _ref.children,
       color = _ref.color;
-  return _react.default.createElement("div", {
+  return _react["default"].createElement("div", {
     className: "error-box",
     style: {
       color: color
@@ -32,12 +32,12 @@ ErrorBox.propTypes = {
   /**
    * Children
    */
-  children: _react.default.PropTypes.node.isRequired,
+  children: _react["default"].PropTypes.node.isRequired,
 
   /**
    * Color
    */
-  color: _react.default.PropTypes.oneOf(['red', 'green', 'blue'])
+  color: _react["default"].PropTypes.oneOf(['red', 'green', 'blue'])
 };
 ErrorBox.__docgenInfo = {
   "description": "forwardRef Wrapped Component",

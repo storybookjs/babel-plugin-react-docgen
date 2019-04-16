@@ -7,7 +7,7 @@ exports.Wrapper = exports.wrapComopnent = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -29,7 +29,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 var wrapComopnent = function wrapComopnent(Component) {
   var WrappedComponent = function WrappedComponent(props) {
-    return _react.default.createElement(Wrapper, null, _react.default.createElement(Component, null));
+    return _react["default"].createElement(Wrapper, null, _react["default"].createElement(Component, null));
   };
 
   return WrappedComponent;
@@ -52,18 +52,18 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var children = this.props.children;
-      return _react.default.createElement("div", {
+      return _react["default"].createElement("div", {
         className: "error-box"
       }, children);
     }
   }]);
 
   return Wrapper;
-}(_react.default.Component);
+}(_react["default"].Component);
 
 exports.Wrapper = Wrapper;
 Wrapper.propTypes = {
-  children: _react.default.PropTypes.node.isRequired
+  children: _react["default"].PropTypes.node.isRequired
 };
 Wrapper.__docgenInfo = {
   "description": "",

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -13,27 +13,27 @@ var _reactRedux = require("react-redux");
 
 var _testSelector = require("./testSelector");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var TestComponent = function TestComponent(props) {
   var text = props.text,
       onClick = props.onClick;
-  return _react.default.createElement("div", null, _react.default.createElement("div", null, "Text: ", text), _react.default.createElement("button", {
+  return _react["default"].createElement("div", null, _react["default"].createElement("div", null, "Text: ", text), _react["default"].createElement("button", {
     onClick: onClick
   }, "Button"));
 };
 
 TestComponent.propTypes = {
   /** Text to display */
-  text: _propTypes.default.string,
+  text: _propTypes["default"].string,
 
   /** Called on click */
-  onClick: _propTypes.default.func
+  onClick: _propTypes["default"].func
 };
 
 var _default = (0, _reactRedux.connect)(_testSelector.mapStateToProps, _testSelector.mapDispatchToProps)(TestComponent);
 
-exports.default = _default;
+exports["default"] = _default;
 TestComponent.__docgenInfo = {
   "description": "",
   "methods": [],

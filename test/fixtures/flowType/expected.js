@@ -3,11 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -57,17 +57,17 @@ function (_React$Component) {
   _createClass(FlowTypeButton, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement("button", {
+      return _react["default"].createElement("button", {
         onClick: this.handleClick
       }, this.props.label);
     }
   }]);
 
   return FlowTypeButton;
-}(_react.default.Component);
+}(_react["default"].Component);
 
 var _default = FlowTypeButton;
-exports.default = _default;
+exports["default"] = _default;
 FlowTypeButton.__docgenInfo = {
   "description": "",
   "methods": [{
