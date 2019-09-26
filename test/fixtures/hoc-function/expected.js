@@ -31,9 +31,6 @@ TestComponent.propTypes = {
   onClick: _propTypes["default"].func
 };
 
-var _default = (0, _reactRedux.connect)(_testSelector.mapStateToProps, _testSelector.mapDispatchToProps)(TestComponent);
-
-exports["default"] = _default;
 TestComponent.__docgenInfo = {
   "description": "",
   "methods": [],
@@ -55,6 +52,10 @@ TestComponent.__docgenInfo = {
     }
   }
 };
+
+var _default = (0, _reactRedux.connect)(_testSelector.mapStateToProps, _testSelector.mapDispatchToProps)(TestComponent);
+
+exports["default"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/hoc-function/actual.js"] = {
