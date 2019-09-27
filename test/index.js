@@ -8,7 +8,7 @@ function trim(str) {
   return str.replace(/^\s+|\s+$/, '');
 }
 
-describe('Add propType doc to react classes', () => {
+describe('Add propType doc to react components', () => {
   const fixturesDir = path.join(__dirname, 'fixtures');
   fs.readdirSync(fixturesDir).map((caseName) => {
     // Ignore macOS directory files

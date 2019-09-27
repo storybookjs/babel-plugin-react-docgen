@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.CompA = exports["default"] = void 0;
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -95,10 +95,60 @@ var _default = withHoc()(deeperHoc(Component));
 
 exports["default"] = _default;
 
+var CompA =
+/*#__PURE__*/
+function (_React$Component2) {
+  _inherits(CompA, _React$Component2);
+
+  function CompA() {
+    _classCallCheck(this, CompA);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(CompA).apply(this, arguments));
+  }
+
+  _createClass(CompA, [{
+    key: "render",
+    value: function render() {
+      return null;
+    }
+  }]);
+
+  return CompA;
+}(React.Component);
+
+exports.CompA = CompA;
+CompA.propTypes = {
+  /** Fancy styles in here */
+  myProp: React.PropTypes.object
+};
+CompA.__docgenInfo = {
+  "description": "",
+  "methods": [],
+  "displayName": "CompA",
+  "props": {
+    "myProp": {
+      "type": {
+        "name": "custom",
+        "raw": "React.PropTypes.object"
+      },
+      "required": false,
+      "description": "Fancy styles in here"
+    }
+  }
+};
+
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/hoc-multiple/actual.js"] = {
     name: "Component",
     docgenInfo: Component.__docgenInfo,
+    path: "test/fixtures/hoc-multiple/actual.js"
+  };
+}
+
+if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
+  STORYBOOK_REACT_CLASSES["test/fixtures/hoc-multiple/actual.js"] = {
+    name: "CompA",
+    docgenInfo: CompA.__docgenInfo,
     path: "test/fixtures/hoc-multiple/actual.js"
   };
 }
