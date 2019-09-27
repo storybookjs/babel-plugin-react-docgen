@@ -59,10 +59,6 @@ Component.propTypes = {
   /** Fancy styles in here */
   style: React.PropTypes.object
 };
-
-var _default = withHoc(Component);
-
-exports["default"] = _default;
 Component.__docgenInfo = {
   "description": "Super tiny component",
   "methods": [],
@@ -94,6 +90,10 @@ Component.__docgenInfo = {
     }
   }
 };
+
+var _default = withHoc(Component);
+
+exports["default"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/hoc/actual.js"] = {

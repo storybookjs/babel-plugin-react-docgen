@@ -30,7 +30,6 @@ TestComponent.propTypes = {
   /** Called on click */
   onClick: _propTypes["default"].func
 };
-
 TestComponent.__docgenInfo = {
   "description": "",
   "methods": [],

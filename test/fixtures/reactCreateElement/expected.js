@@ -32,8 +32,6 @@ Kitten.defaultProps = {
   isWide: false,
   isLong: false
 };
-var _default = Kitten;
-exports["default"] = _default;
 Kitten.__docgenInfo = {
   "description": "",
   "methods": [],
@@ -63,6 +61,8 @@ Kitten.__docgenInfo = {
     }
   }
 };
+var _default = Kitten;
+exports["default"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/reactCreateElement/actual.js"] = {

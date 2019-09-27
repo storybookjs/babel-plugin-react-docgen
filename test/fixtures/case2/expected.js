@@ -56,8 +56,6 @@ function (_React$Component) {
 ErrorBox.propTypes = {
   children: _react["default"].PropTypes.node.isRequired
 };
-var _default = ErrorBox;
-exports["default"] = _default;
 ErrorBox.__docgenInfo = {
   "description": "",
   "methods": [],
@@ -72,6 +70,8 @@ ErrorBox.__docgenInfo = {
     }
   }
 };
+var _default = ErrorBox;
+exports["default"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/case2/actual.js"] = {

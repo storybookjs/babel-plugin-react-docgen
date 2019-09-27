@@ -57,8 +57,6 @@ ErrorBox.propTypes = {
   /** @deprecated This is the description for prop */
   deprecatedProp: _react["default"].PropTypes.number
 };
-var _default = ErrorBox;
-exports["default"] = _default;
 ErrorBox.__docgenInfo = {
   "description": "",
   "methods": [],
@@ -74,6 +72,8 @@ ErrorBox.__docgenInfo = {
     }
   }
 };
+var _default = ErrorBox;
+exports["default"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/with-custom-handlers/actual.js"] = {

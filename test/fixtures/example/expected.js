@@ -66,13 +66,13 @@ function (_Component) {
   return App;
 }(_react.Component);
 
-var _default = App;
-exports["default"] = _default;
 App.__docgenInfo = {
   "description": "",
   "methods": [],
   "displayName": "App"
 };
+var _default = App;
+exports["default"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/example/actual.js"] = {

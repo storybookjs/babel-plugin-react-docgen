@@ -23,8 +23,6 @@ var First = function First(_ref) {
 First.propTypes = {
   children: _react.PropTypes.node
 };
-var _default = First;
-exports["default"] = _default;
 First.__docgenInfo = {
   "description": "",
   "methods": [],
@@ -39,6 +37,8 @@ First.__docgenInfo = {
     }
   }
 };
+var _default = First;
+exports["default"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/case5/actual.js"] = {
