@@ -65,7 +65,14 @@ function injectReactDocgenInfo(path, state, code, t) {
         t.memberExpression(t.identifier(exportName), t.identifier('__docgenInfo')),
         docNode
       ));
-    program.pushContainer('body', docgenInfo);
+
+    const defaultExportDeclaration = program.get('body').find(t.isExportDefaultDeclaration);
+
+    if (defaultExportDeclaration) {
+      defaultExportDeclaration.insertBefore(docgenInfo);
+    } else {
+      program.pushContainer('body', docgenInfo);
+    }
 
     injectDocgenGlobal(exportName, path, state, t);
   });
