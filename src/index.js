@@ -66,16 +66,10 @@ function injectReactDocgenInfo(path, state, code, t) {
         docNode
       ));
 
-    const defaultExportDeclaration = program.get('body').find((node) => {
-      const isHoC = t.isCallExpression(node.get('declaration').node)
-      return (
-        t.isExportDefaultDeclaration(node) &&
-        (node.get('declaration').node.name === exportName || isHoC)
-      );
-    });
+    const exportPath = program.get('body').find((node) => isExportCurrent(node, exportName, t));
 
-    if (defaultExportDeclaration) {
-      defaultExportDeclaration.insertBefore(docgenInfo);
+    if (exportPath) {
+      exportPath.insertBefore(docgenInfo);
     } else {
       program.pushContainer('body', docgenInfo);
     }
@@ -163,4 +157,35 @@ function buildObjectExpression(obj, t){
   } else if(_.isNull(obj)) {
     return t.nullLiteral();
   }
+}
+
+function getComponentFromHoC(path) {
+  if (path.isCallExpression()) {
+    return getComponentFromHoC(path.get('arguments.0'));
+  }
+  return path.isIdentifier() ? path.node.name : null;
+}
+
+function isExportCurrent(path, exportName, t) {
+  if (t.isExportDefaultDeclaration(path)) {
+    const decl = path.get('declaration');
+
+    const identifier = (
+      decl.isIdentifier() // export default MyComp
+        ? decl.node.name
+        : getComponentFromHoC(decl) // export default withHoC(MyComp)
+    );
+
+    if (identifier === exportName) {
+      return true
+    }
+  }
+
+  if (t.isExportNamedDeclaration(path)) {
+    return path.get('specifiers').find((sp) => (
+      sp.node.exported.name === exportName
+    ))
+  }
+
+  return false
 }

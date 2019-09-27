@@ -17,3 +17,14 @@ Component.propTypes = {
 }
 
 export default withHoc()(deeperHoc(Component))
+
+class CompA extends React.Component {
+  render() { return null }
+}
+
+CompA.propTypes = {
+  /** Fancy styles in here */
+  myProp: React.PropTypes.object,
+}
+
+export { CompA }
