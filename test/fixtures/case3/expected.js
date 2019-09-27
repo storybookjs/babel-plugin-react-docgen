@@ -25,17 +25,6 @@ Button.propTypes = {
   onClick: _react["default"].PropTypes.func,
   style: _react["default"].PropTypes.object
 };
-var _default = Button;
-exports["default"] = _default;
-var A;
-A = [1, 2, 2, 2];
-
-function abc() {
-  var c = function cef() {
-    A = 'str';
-  };
-}
-
 Button.__docgenInfo = {
   "description": "",
   "methods": [],
@@ -68,6 +57,16 @@ Button.__docgenInfo = {
     }
   }
 };
+var _default = Button;
+exports["default"] = _default;
+var A;
+A = [1, 2, 2, 2];
+
+function abc() {
+  var c = function cef() {
+    A = 'str';
+  };
+}
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/case3/actual.js"] = {

@@ -137,8 +137,6 @@ Breadcrumb.defaultProps = {
   className: '',
   foreColor: ''
 };
-var _default = Breadcrumb;
-exports["default"] = _default;
 Breadcrumb.__docgenInfo = {
   "description": "",
   "methods": [],
@@ -263,6 +261,8 @@ Breadcrumb.__docgenInfo = {
     }
   }
 };
+var _default = Breadcrumb;
+exports["default"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/multipleExports2/actual.js"] = {

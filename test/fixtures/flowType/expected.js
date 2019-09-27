@@ -66,8 +66,6 @@ function (_React$Component) {
   return FlowTypeButton;
 }(_react["default"].Component);
 
-var _default = FlowTypeButton;
-exports["default"] = _default;
 FlowTypeButton.__docgenInfo = {
   "description": "",
   "methods": [{
@@ -107,6 +105,8 @@ FlowTypeButton.__docgenInfo = {
     }
   }
 };
+var _default = FlowTypeButton;
+exports["default"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/flowType/actual.js"] = {

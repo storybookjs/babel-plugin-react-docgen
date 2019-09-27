@@ -56,6 +56,20 @@ function (_React$Component) {
 ErrorBox.propTypes = {
   children: _react["default"].PropTypes.node.isRequired
 };
+ErrorBox.__docgenInfo = {
+  "description": "",
+  "methods": [],
+  "displayName": "ErrorBox",
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": true,
+      "description": ""
+    }
+  }
+};
 var _default = ErrorBox;
 exports["default"] = _default;
 
@@ -87,12 +101,12 @@ exports.ErrorBox2 = ErrorBox2;
 ErrorBox2.propTypes = {
   children2: _react["default"].PropTypes.node.isRequired
 };
-ErrorBox.__docgenInfo = {
+ErrorBox2.__docgenInfo = {
   "description": "",
   "methods": [],
-  "displayName": "ErrorBox",
+  "displayName": "ErrorBox2",
   "props": {
-    "children": {
+    "children2": {
       "type": {
         "name": "node"
       },
@@ -109,21 +123,6 @@ if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
     path: "test/fixtures/multiple-exports/actual.js"
   };
 }
-
-ErrorBox2.__docgenInfo = {
-  "description": "",
-  "methods": [],
-  "displayName": "ErrorBox2",
-  "props": {
-    "children2": {
-      "type": {
-        "name": "node"
-      },
-      "required": true,
-      "description": ""
-    }
-  }
-};
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/multiple-exports/actual.js"] = {

@@ -21,8 +21,6 @@ function FuncDeclaration(_ref) {
 FuncDeclaration.propTypes = {
   children: _react.PropTypes.node
 };
-var _default = FuncDeclaration;
-exports["default"] = _default;
 FuncDeclaration.__docgenInfo = {
   "description": "",
   "methods": [],
@@ -37,6 +35,8 @@ FuncDeclaration.__docgenInfo = {
     }
   }
 };
+var _default = FuncDeclaration;
+exports["default"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/functionDeclaration/actual.js"] = {
