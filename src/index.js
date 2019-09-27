@@ -66,7 +66,13 @@ function injectReactDocgenInfo(path, state, code, t) {
         docNode
       ));
 
-    const defaultExportDeclaration = program.get('body').find(t.isExportDefaultDeclaration);
+    const defaultExportDeclaration = program.get('body').find((node) => {
+      const isHoC = t.isCallExpression(node.get('declaration').node)
+      return (
+        t.isExportDefaultDeclaration(node) &&
+        (node.get('declaration').node.name === exportName || isHoC)
+      );
+    });
 
     if (defaultExportDeclaration) {
       defaultExportDeclaration.insertBefore(docgenInfo);
