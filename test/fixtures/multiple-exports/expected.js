@@ -101,6 +101,15 @@ exports.ErrorBox2 = ErrorBox2;
 ErrorBox2.propTypes = {
   children2: _react["default"].PropTypes.node.isRequired
 };
+
+if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
+  STORYBOOK_REACT_CLASSES["test/fixtures/multiple-exports/actual.js"] = {
+    name: "ErrorBox",
+    docgenInfo: ErrorBox.__docgenInfo,
+    path: "test/fixtures/multiple-exports/actual.js"
+  };
+}
+
 ErrorBox2.__docgenInfo = {
   "description": "",
   "methods": [],
@@ -115,14 +124,6 @@ ErrorBox2.__docgenInfo = {
     }
   }
 };
-
-if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
-  STORYBOOK_REACT_CLASSES["test/fixtures/multiple-exports/actual.js"] = {
-    name: "ErrorBox",
-    docgenInfo: ErrorBox.__docgenInfo,
-    path: "test/fixtures/multiple-exports/actual.js"
-  };
-}
 
 if (typeof STORYBOOK_REACT_CLASSES !== "undefined") {
   STORYBOOK_REACT_CLASSES["test/fixtures/multiple-exports/actual.js"] = {
