@@ -364,7 +364,7 @@ CalendarDay.__docgenInfo = {
     },
     "onDayClick": {
       "defaultValue": {
-        "value": "function() {}",
+        "value": "() {}",
         "computed": false
       },
       "type": {
@@ -375,7 +375,7 @@ CalendarDay.__docgenInfo = {
     },
     "onDayMouseDown": {
       "defaultValue": {
-        "value": "function() {}",
+        "value": "() {}",
         "computed": false
       },
       "type": {
@@ -386,7 +386,7 @@ CalendarDay.__docgenInfo = {
     },
     "onDayMouseUp": {
       "defaultValue": {
-        "value": "function() {}",
+        "value": "() {}",
         "computed": false
       },
       "type": {
@@ -397,7 +397,7 @@ CalendarDay.__docgenInfo = {
     },
     "onDayMouseEnter": {
       "defaultValue": {
-        "value": "function() {}",
+        "value": "() {}",
         "computed": false
       },
       "type": {
@@ -408,7 +408,7 @@ CalendarDay.__docgenInfo = {
     },
     "onDayMouseLeave": {
       "defaultValue": {
-        "value": "function() {}",
+        "value": "() {}",
         "computed": false
       },
       "type": {
@@ -419,7 +419,7 @@ CalendarDay.__docgenInfo = {
     },
     "onDayTouchStart": {
       "defaultValue": {
-        "value": "function() {}",
+        "value": "() {}",
         "computed": false
       },
       "type": {
@@ -430,7 +430,7 @@ CalendarDay.__docgenInfo = {
     },
     "onDayTouchEnd": {
       "defaultValue": {
-        "value": "function() {}",
+        "value": "() {}",
         "computed": false
       },
       "type": {
@@ -441,7 +441,7 @@ CalendarDay.__docgenInfo = {
     },
     "onDayTouchTap": {
       "defaultValue": {
-        "value": "function() {}",
+        "value": "() {}",
         "computed": false
       },
       "type": {
