@@ -17,14 +17,14 @@
     "@babel/preset-react": "^7.6.3",
     "@babel/register": "^7.6.2",
     "mocha": "^5.2.0",
+    "jest": "^24.9.0",
+    "jest-specific-snapshot": "^2.0.0",
     "react-docgen-deprecation-handler": "1.1.1"
   },
   "scripts": {
     "clean": "rm -rf lib",
     "build": "babel src --out-dir lib",
-    "test": "mocha --compilers js:@babel/register",
-    "test:watch": "npm run test -- --watch",
-    "prepare": "npm run test && npm run clean && npm run build"
+    "test": "jest"
   },
   "keywords": [
     "react",
