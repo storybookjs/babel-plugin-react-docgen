@@ -11,6 +11,8 @@ jest.mock('../src/relativePath', () => ({
   },
 }));
 
+const normalizeNewlines = string => string.replace(/\\r\\n/g, '\\n');
+
 describe('Add propType doc to react components', () => {
   const fixturesDir = path.join(__dirname, 'fixtures');
   fs.readdirSync(fixturesDir).map(caseName => {
@@ -35,7 +37,7 @@ describe('Add propType doc to react components', () => {
           babelrc: false,
         };
 
-        const output = transformFileSync(inputPath, options).code;
+        const output = normalizeNewlines(transformFileSync(inputPath, options).code);
         expect(output).toMatchSpecificSnapshot(outputPath);
       });
     }
