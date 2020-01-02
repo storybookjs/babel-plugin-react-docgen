@@ -1,5 +1,5 @@
 {
-  "version": "3.2.0",
+  "version": "4.0.0",
   "name": "babel-plugin-react-docgen",
   "description": "Babel plugin to add react-docgen info into your code",
   "repository": "https://github.com/storybooks/babel-plugin-react-docgen",
@@ -8,6 +8,10 @@
     "Charles Lehnert"
   ],
   "main": "lib/index.js",
+  "files": [
+    "*.md",
+    "lib/**/*"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
@@ -16,14 +20,14 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.6.3",
     "@babel/register": "^7.6.2",
-    "mocha": "^5.2.0",
+    "jest": "^24.9.0",
+    "jest-specific-snapshot": "^2.0.0",
     "react-docgen-deprecation-handler": "1.1.1"
   },
   "scripts": {
     "clean": "rm -rf lib",
     "build": "babel src --out-dir lib",
-    "test": "mocha --compilers js:@babel/register",
-    "test:watch": "npm run test -- --watch",
+    "test": "jest",
     "prepare": "npm run test && npm run clean && npm run build"
   },
   "keywords": [
@@ -34,7 +38,7 @@
   ],
   "dependencies": {
     "lodash": "^4.17.15",
-    "react-docgen": "^4.1.1",
+    "react-docgen": "^5.0.0",
     "recast": "^0.14.7"
   },
   "license": "MIT"

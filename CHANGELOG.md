@@ -1,5 +1,14 @@
 # ChangeLog
 
+### v4.0.0
+03-01-2020
+
+Breaking changes:
+* Upgrade to `react-docgen@5.0.0`
+
+Maintenance:
+* Overhaul tests to use jest instead of mocha
+
 ### v3.1.0
 16-04-2019
 
