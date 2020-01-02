@@ -1,5 +1,5 @@
 {
-  "version": "4.0.0-beta.3",
+  "version": "4.0.0",
   "name": "babel-plugin-react-docgen",
   "description": "Babel plugin to add react-docgen info into your code",
   "repository": "https://github.com/storybooks/babel-plugin-react-docgen",
@@ -20,7 +20,6 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.6.3",
     "@babel/register": "^7.6.2",
-    "mocha": "^5.2.0",
     "jest": "^24.9.0",
     "jest-specific-snapshot": "^2.0.0",
     "react-docgen-deprecation-handler": "1.1.1"

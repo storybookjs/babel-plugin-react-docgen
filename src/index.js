@@ -1,4 +1,3 @@
-import * as Path from 'path';
 import * as _ from 'lodash';
 import * as ReactDocgen from 'react-docgen';
 import * as reactDocgenHandlers from 'react-docgen/dist/handlers';
