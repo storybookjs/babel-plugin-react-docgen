@@ -79,10 +79,10 @@ ErrorBox.__docgenInfo = {
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/forwardRef/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"ErrorBox\\",
     docgenInfo: ErrorBox.__docgenInfo,
-    path: \\"test/fixtures/forwardRef/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

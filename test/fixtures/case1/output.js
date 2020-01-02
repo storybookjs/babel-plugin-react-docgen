@@ -468,10 +468,10 @@ CalendarDay.__docgenInfo = {
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/case1/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"CalendarDay\\",
     docgenInfo: CalendarDay.__docgenInfo,
-    path: \\"test/fixtures/case1/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

@@ -60,10 +60,10 @@ var _default = (0, _reactRedux.connect)(_testSelector.mapStateToProps, _testSele
 exports[\\"default\\"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/hoc-function/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"TestComponent\\",
     docgenInfo: TestComponent.__docgenInfo,
-    path: \\"test/fixtures/hoc-function/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

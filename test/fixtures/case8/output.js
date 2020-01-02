@@ -84,10 +84,10 @@ Wrapper.__docgenInfo = {
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/case8/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"Wrapper\\",
     docgenInfo: Wrapper.__docgenInfo,
-    path: \\"test/fixtures/case8/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

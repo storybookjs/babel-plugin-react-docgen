@@ -78,10 +78,10 @@ var _default = App;
 exports[\\"default\\"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/example/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"App\\",
     docgenInfo: App.__docgenInfo,
-    path: \\"test/fixtures/example/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

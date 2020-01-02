@@ -141,18 +141,18 @@ CompA.__docgenInfo = {
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/hoc-multiple/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"Component\\",
     docgenInfo: Component.__docgenInfo,
-    path: \\"test/fixtures/hoc-multiple/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/hoc-multiple/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"CompA\\",
     docgenInfo: CompA.__docgenInfo,
-    path: \\"test/fixtures/hoc-multiple/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

@@ -268,10 +268,10 @@ var _default = Breadcrumb;
 exports[\\"default\\"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/multipleExports2/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"Breadcrumb\\",
     docgenInfo: Breadcrumb.__docgenInfo,
-    path: \\"test/fixtures/multipleExports2/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

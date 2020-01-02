@@ -72,10 +72,10 @@ function abc() {
 }
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/case4/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"Button\\",
     docgenInfo: Button.__docgenInfo,
-    path: \\"test/fixtures/case4/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

@@ -99,10 +99,10 @@ var _default = withHoc(Component);
 exports[\\"default\\"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/hoc/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"Component\\",
     docgenInfo: Component.__docgenInfo,
-    path: \\"test/fixtures/hoc/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

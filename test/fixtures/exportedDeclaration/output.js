@@ -63,10 +63,10 @@ Button.__docgenInfo = {
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/exportedDeclaration/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"Button\\",
     docgenInfo: Button.__docgenInfo,
-    path: \\"test/fixtures/exportedDeclaration/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

@@ -6,8 +6,8 @@ import plugin from '../src';
 
 jest.mock('../src/relativePath', () => ({
   relativePath: filename => {
-    const { posix } = require('path');
-    return posix.relative('./', posix.resolve('./', filename));
+    const { basename } = require('path');
+    return `relativePath(${basename(filename)})`;
   },
 }));
 

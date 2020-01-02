@@ -106,10 +106,10 @@ OriginalName.__docgenInfo = {
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/differentName/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"OriginalName\\",
     docgenInfo: OriginalName.__docgenInfo,
-    path: \\"test/fixtures/differentName/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

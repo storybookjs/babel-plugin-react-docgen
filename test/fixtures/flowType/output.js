@@ -112,10 +112,10 @@ var _default = FlowTypeButton;
 exports[\\"default\\"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/flowType/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"FlowTypeButton\\",
     docgenInfo: FlowTypeButton.__docgenInfo,
-    path: \\"test/fixtures/flowType/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

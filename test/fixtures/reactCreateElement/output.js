@@ -68,10 +68,10 @@ var _default = Kitten;
 exports[\\"default\\"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/reactCreateElement/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"Kitten\\",
     docgenInfo: Kitten.__docgenInfo,
-    path: \\"test/fixtures/reactCreateElement/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

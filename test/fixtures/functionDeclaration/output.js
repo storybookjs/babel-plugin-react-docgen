@@ -46,10 +46,10 @@ var _default = FuncDeclaration;
 exports[\\"default\\"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/functionDeclaration/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"FuncDeclaration\\",
     docgenInfo: FuncDeclaration.__docgenInfo,
-    path: \\"test/fixtures/functionDeclaration/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

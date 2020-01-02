@@ -52,10 +52,10 @@ ComponentWrapper.__docgenInfo = {
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/reactCreateClass/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"ComponentWrapper\\",
     docgenInfo: ComponentWrapper.__docgenInfo,
-    path: \\"test/fixtures/reactCreateClass/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

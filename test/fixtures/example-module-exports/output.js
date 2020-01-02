@@ -39,10 +39,10 @@ App.__docgenInfo = {
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/example-module-exports/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"App\\",
     docgenInfo: App.__docgenInfo,
-    path: \\"test/fixtures/example-module-exports/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

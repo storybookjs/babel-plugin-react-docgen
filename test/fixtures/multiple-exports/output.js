@@ -120,18 +120,18 @@ ErrorBox2.__docgenInfo = {
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/multiple-exports/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"ErrorBox\\",
     docgenInfo: ErrorBox.__docgenInfo,
-    path: \\"test/fixtures/multiple-exports/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/multiple-exports/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"ErrorBox2\\",
     docgenInfo: ErrorBox2.__docgenInfo,
-    path: \\"test/fixtures/multiple-exports/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

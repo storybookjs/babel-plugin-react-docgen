@@ -77,10 +77,10 @@ var _default = ErrorBox;
 exports[\\"default\\"] = _default;
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/case2/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"ErrorBox\\",
     docgenInfo: ErrorBox.__docgenInfo,
-    path: \\"test/fixtures/case2/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;

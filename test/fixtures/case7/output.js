@@ -45,10 +45,10 @@ First.__docgenInfo = {
 };
 
 if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\") {
-  STORYBOOK_REACT_CLASSES[\\"test/fixtures/case7/input.js\\"] = {
+  STORYBOOK_REACT_CLASSES[\\"relativePath(input.js)\\"] = {
     name: \\"First\\",
     docgenInfo: First.__docgenInfo,
-    path: \\"test/fixtures/case7/input.js\\"
+    path: \\"relativePath(input.js)\\"
   };
 }"
 `;
