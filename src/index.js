@@ -19,6 +19,7 @@ export default function({ types: t }) {
 }
 
 function injectReactDocgenInfo(path, state, code, t) {
+  const { filename } = state.file.opts;
   const program = path.scope.getProgramParent().path;
 
   let docgenResults = [];
@@ -36,7 +37,9 @@ function injectReactDocgenInfo(path, state, code, t) {
     }
 
     const handlers = [...defaultHandlers, ...customHandlers, actualNameHandler];
-    docgenResults = ReactDocgen.parse(code, resolver, handlers);
+    docgenResults = ReactDocgen.parse(code, resolver, handlers, {
+      filename,
+    });
 
     if (state.opts.removeMethods) {
       docgenResults.forEach(function(docgenResult) {
