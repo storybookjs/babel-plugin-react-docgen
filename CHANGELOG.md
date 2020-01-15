@@ -1,5 +1,11 @@
 # ChangeLog
 
+### v4.1.0
+14-01-2020
+
+New Features:
+* Pass filename to React Docgen for better babel transpilation #81
+
 ### v4.0.0
 03-01-2020
 
