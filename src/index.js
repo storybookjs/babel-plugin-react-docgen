@@ -36,7 +36,14 @@ function injectReactDocgenInfo(path, state, code, t) {
       });
     }
 
-    const handlers = [...defaultHandlers, ...customHandlers, actualNameHandler];
+    let preHandlers = [];
+    if (state.opts.preHandlers) {
+        state.opts.preHandlers.forEach(handler => {
+            preHandlers.push(require(handler));
+        });
+      }
+
+    const handlers = [...preHandlers, ...defaultHandlers, ...customHandlers, actualNameHandler];
     docgenResults = ReactDocgen.parse(code, resolver, handlers, {
       filename,
     });
