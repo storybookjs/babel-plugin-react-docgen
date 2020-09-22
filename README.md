@@ -87,9 +87,11 @@ Use it inside your `.babelrc`
 
 |  option  |  description   |  default   |
 | --- | --- | --- |
-| resolver      | You may use the 3 built-in [react-docgen resolvers](https://github.com/reactjs/react-docgen#resolver-1) by specifying its name as a `string`, or you may specify a custom resolver by specifying the function explicitly.  | ```"findAllExportedComponentDefinition"``` |
-| handlers      | All [react-docgen handlers](https://github.com/reactjs/react-docgen#handlers-1) are automatically applied. However, custom handlers can be added by specifying them here. Any `string` value will be loaded by `require`, and a `function` will be used directly. |  |
-| removeMethods | Used to remove docgen information about methods |   ```false```  |
+| resolver                | You may use the 3 built-in [react-docgen resolvers](https://github.com/reactjs/react-docgen#resolver-1) by specifying its name as a `string`, or you may specify a custom resolver by specifying the function explicitly.  | ```"findAllExportedComponentDefinition"``` |
+| handlers                | All [react-docgen handlers](https://github.com/reactjs/react-docgen#handlers-1) are automatically applied. However, custom handlers can be added by specifying them here. Any `string` value will be loaded by `require`, and a `function` will be used directly. |  |
+| removeMethods           | Used to remove docgen information about methods. |   ```false```  |
+| DOC_GEN_COLLECTION_NAME | The name of a global variable where all docgen information can be stored. See [below](#collect-all-docgen-info) for more information. | |
+| ...options              | Remaining options will be passed directly as [react-docgen options](https://github.com/reactjs/react-docgen#options). Any options they allowed will be passed through, but the `filename` will be overwritten by the filename provided by babel. | |
 
 ## Collect All Docgen Info
 
@@ -128,10 +130,9 @@ if (typeof MY_REACT_DOCS !== 'undefined') {
 
 ## Compile Performance
 
-Now, we parse your code with `react-docgen` to get these info.
-But we only do it for files which has a React component.
+We parse your code with `react-docgen` to get this info, but we only do it for files which contain a React component.
 
-Yes, this will add some overhead to your project. But once you turned on [babel cache directory](http://stackoverflow.com/a/30384710) this won't be a big issue.
+There will be some overhead to your project, but you can leverage [babel's cache directory](http://stackoverflow.com/a/30384710) to avoid this a huge performance hit.
 
 ## Output Size
 

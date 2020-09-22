@@ -21,18 +21,25 @@ function injectReactDocgenInfo(path, state, code, t) {
   const { filename } = state.file.opts;
   const program = path.scope.getProgramParent().path;
 
+  const {
+    resolver: resolverOpt,
+    handlers: handlersOpt,
+    DOC_GEN_COLLECTION_NAME,
+    ...opts
+  } = state.opts;
+
   let docgenResults = [];
   try {
     let resolver = ReactDocgen.resolver.findAllExportedComponentDefinitions;
-    if (typeof state.opts.resolver === 'string') {
-      resolver = ReactDocgen.resolver[state.opts.resolver];
-    } else if (typeof state.opts.resolver === 'function') {
-      resolver = state.opts.resolver;
+    if (typeof resolverOpt === 'string') {
+      resolver = ReactDocgen.resolver[resolverOpt];
+    } else if (typeof resolverOpt === 'function') {
+      resolver = resolverOpt;
     }
 
     let customHandlers = [];
-    if (state.opts.handlers) {
-      state.opts.handlers.forEach(handler => {
+    if (handlersOpt) {
+      handlersOpt.forEach(handler => {
         if (typeof handler === 'string') {
           customHandlers.push(require(handler));
         } else if (typeof handler === 'function') {
@@ -43,6 +50,7 @@ function injectReactDocgenInfo(path, state, code, t) {
 
     const handlers = [...defaultHandlers, ...customHandlers, actualNameHandler];
     docgenResults = ReactDocgen.parse(code, resolver, handlers, {
+      ...opts,
       filename,
     });
 
