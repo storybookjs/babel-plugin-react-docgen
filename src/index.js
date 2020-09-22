@@ -1,10 +1,9 @@
 import * as _ from 'lodash';
 import * as ReactDocgen from 'react-docgen';
-import * as reactDocgenHandlers from 'react-docgen/dist/handlers';
 import actualNameHandler from './actualNameHandler';
 import { relativePath } from './relativePath';
 
-const defaultHandlers = Object.values(reactDocgenHandlers).map(handler => handler);
+const defaultHandlers = Object.values(ReactDocgen.handlers).map(handler => handler);
 
 export default function({ types: t }) {
   return {
@@ -25,14 +24,20 @@ function injectReactDocgenInfo(path, state, code, t) {
   let docgenResults = [];
   try {
     let resolver = ReactDocgen.resolver.findAllExportedComponentDefinitions;
-    if (state.opts.resolver) {
+    if (typeof state.opts.resolver === 'string') {
       resolver = ReactDocgen.resolver[state.opts.resolver];
+    } else if (typeof state.opts.resolver === 'function') {
+      resolver = state.opts.resolver;
     }
 
     let customHandlers = [];
     if (state.opts.handlers) {
       state.opts.handlers.forEach(handler => {
-        customHandlers.push(require(handler));
+        if (typeof handler === 'string') {
+          customHandlers.push(require(handler));
+        } else if (typeof handler === 'function') {
+          customHandlers.push(handler);
+        }
       });
     }
 

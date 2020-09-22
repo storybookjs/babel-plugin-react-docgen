@@ -87,8 +87,9 @@ Use it inside your `.babelrc`
 
 |  option  |  description   |  default   |
 | --- | --- | --- |
-|   resolver  |   [react-docgen](https://github.com/reactjs/react-docgen) has 3 built in resolvers which may be used. Resolvers define how/what the doc generator will inspect. You may inspect the existing resolvers in [react-docgen/tree/master/src/resolver](https://github.com/reactjs/react-docgen/tree/master/src/resolver).  | ```"findAllExportedComponentDefinition"``` |
-|   removeMethods  | optionally remove docgen information about methods |   ```false```  |
+| resolver      | You may use the 3 built-in [react-docgen resolvers](https://github.com/reactjs/react-docgen#resolver-1) by specifying its name as a `string`, or you may specify a custom resolver by specifying the function explicitly.  | ```"findAllExportedComponentDefinition"``` |
+| handlers      | All [react-docgen handlers](https://github.com/reactjs/react-docgen#handlers-1) are automatically applied. However, custom handlers can be added by specifying them here. Any `string` value will be loaded by `require`, and a `function` will be used directly. |  |
+| removeMethods | Used to remove docgen information about methods |   ```false```  |
 
 ## Collect All Docgen Info
 
@@ -105,7 +106,7 @@ So, we allow you to collect all the docgen info into a global collection. To do 
         "DOC_GEN_COLLECTION_NAME": "MY_REACT_DOCS",
         "resolver": "findAllComponentDefinitions", // optional (default: findAllExportedComponentDefinitions)
         "removeMethods": true, // optional (default: false)
-        "handlers:": ["react-docgen-deprecation-handler"] // optional array of custom handlers (use the string name of the package in the array)
+        "handlers": ["react-docgen-deprecation-handler"] // optional array of custom handlers
       }
     ]
   ]
