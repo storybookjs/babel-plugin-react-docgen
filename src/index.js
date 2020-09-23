@@ -54,6 +54,10 @@ function injectReactDocgenInfo(path, state, code, t) {
       filename,
     });
 
+    if (docgenResults && !Array.isArray(docgenResults)) {
+      docgenResults = [docgenResults];
+    }
+
     if (state.opts.removeMethods) {
       docgenResults.forEach(function(docgenResult) {
         delete docgenResult.methods;
