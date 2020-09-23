@@ -87,8 +87,11 @@ Use it inside your `.babelrc`
 
 |  option  |  description   |  default   |
 | --- | --- | --- |
-|   resolver  |   [react-docgen](https://github.com/reactjs/react-docgen) has 3 built in resolvers which may be used. Resolvers define how/what the doc generator will inspect. You may inspect the existing resolvers in [react-docgen/tree/master/src/resolver](https://github.com/reactjs/react-docgen/tree/master/src/resolver).  | ```"findAllExportedComponentDefinition"``` |
-|   removeMethods  | optionally remove docgen information about methods |   ```false```  |
+| resolver                | You may use the 3 built-in [react-docgen resolvers](https://github.com/reactjs/react-docgen#resolver-1) by specifying its name as a `string`, or you may specify a custom resolver by specifying the function explicitly.  | ```"findAllExportedComponentDefinition"``` |
+| handlers                | All [react-docgen handlers](https://github.com/reactjs/react-docgen#handlers-1) are automatically applied. However, custom handlers can be added by specifying them here. Any `string` value will be loaded by `require`, and a `function` will be used directly. |  |
+| removeMethods           | Used to remove docgen information about methods. |   ```false```  |
+| DOC_GEN_COLLECTION_NAME | The name of a global variable where all docgen information can be stored. See [below](#collect-all-docgen-info) for more information. | |
+| ...options              | Remaining options will be passed directly as [react-docgen options](https://github.com/reactjs/react-docgen#options). Any options they allowed will be passed through, but the `filename` will be overwritten by the filename provided by babel. | |
 
 ## Collect All Docgen Info
 
@@ -105,7 +108,7 @@ So, we allow you to collect all the docgen info into a global collection. To do 
         "DOC_GEN_COLLECTION_NAME": "MY_REACT_DOCS",
         "resolver": "findAllComponentDefinitions", // optional (default: findAllExportedComponentDefinitions)
         "removeMethods": true, // optional (default: false)
-        "handlers:": ["react-docgen-deprecation-handler"] // optional array of custom handlers (use the string name of the package in the array)
+        "handlers": ["react-docgen-deprecation-handler"] // optional array of custom handlers
       }
     ]
   ]
@@ -127,10 +130,9 @@ if (typeof MY_REACT_DOCS !== 'undefined') {
 
 ## Compile Performance
 
-Now, we parse your code with `react-docgen` to get these info.
-But we only do it for files which has a React component.
+We parse your code with `react-docgen` to get this info, but we only do it for files which contain a React component.
 
-Yes, this will add some overhead to your project. But once you turned on [babel cache directory](http://stackoverflow.com/a/30384710) this won't be a big issue.
+There will be some overhead to your project, but you can leverage [babel's cache directory](http://stackoverflow.com/a/30384710) to avoid this a huge performance hit.
 
 ## Output Size
 

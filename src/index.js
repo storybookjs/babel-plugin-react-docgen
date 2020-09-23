@@ -1,10 +1,9 @@
 import * as _ from 'lodash';
 import * as ReactDocgen from 'react-docgen';
-import * as reactDocgenHandlers from 'react-docgen/dist/handlers';
 import actualNameHandler from './actualNameHandler';
 import { relativePath } from './relativePath';
 
-const defaultHandlers = Object.values(reactDocgenHandlers).map(handler => handler);
+const defaultHandlers = Object.values(ReactDocgen.handlers).map(handler => handler);
 
 export default function({ types: t }) {
   return {
@@ -22,24 +21,42 @@ function injectReactDocgenInfo(path, state, code, t) {
   const { filename } = state.file.opts;
   const program = path.scope.getProgramParent().path;
 
+  const {
+    resolver: resolverOpt,
+    handlers: handlersOpt,
+    DOC_GEN_COLLECTION_NAME,
+    ...opts
+  } = state.opts;
+
   let docgenResults = [];
   try {
     let resolver = ReactDocgen.resolver.findAllExportedComponentDefinitions;
-    if (state.opts.resolver) {
-      resolver = ReactDocgen.resolver[state.opts.resolver];
+    if (typeof resolverOpt === 'string') {
+      resolver = ReactDocgen.resolver[resolverOpt];
+    } else if (typeof resolverOpt === 'function') {
+      resolver = resolverOpt;
     }
 
     let customHandlers = [];
-    if (state.opts.handlers) {
-      state.opts.handlers.forEach(handler => {
-        customHandlers.push(require(handler));
+    if (handlersOpt) {
+      handlersOpt.forEach(handler => {
+        if (typeof handler === 'string') {
+          customHandlers.push(require(handler));
+        } else if (typeof handler === 'function') {
+          customHandlers.push(handler);
+        }
       });
     }
 
     const handlers = [...defaultHandlers, ...customHandlers, actualNameHandler];
     docgenResults = ReactDocgen.parse(code, resolver, handlers, {
+      ...opts,
       filename,
     });
+
+    if (docgenResults && !Array.isArray(docgenResults)) {
+      docgenResults = [docgenResults];
+    }
 
     if (state.opts.removeMethods) {
       docgenResults.forEach(function(docgenResult) {
