@@ -15,10 +15,9 @@
  */
 
 import { utils } from 'react-docgen';
-import recast from 'recast';
+import { namedTypes as types } from 'ast-types';
 
 const { getMemberValuePath, getNameOrValue, resolveFunctionDefinitionToReturnValue, resolveToValue } = utils;
-const {types: {namedTypes: types}} = recast;
 
 export default function actualNameHandler(documentation, path) {
   // Function and class declarations need special treatment. The name of the
