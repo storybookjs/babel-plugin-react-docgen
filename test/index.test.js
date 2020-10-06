@@ -34,6 +34,7 @@ describe('Add propType doc to react components', () => {
               },
             ],
             '@babel/plugin-proposal-class-properties',
+            '@babel/plugin-proposal-optional-chaining',
           ],
           babelrc: false,
         };
