@@ -1,5 +1,13 @@
 # ChangeLog
 
+### v4.2.1
+
+13-10-2020
+
+Bug fixes:
+
+- Fixed support for optional chaining #92
+
 ### v4.2.0
 
 24-09-2020
