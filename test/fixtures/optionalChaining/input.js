@@ -1,29 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PropTypes from 'prop-types';
 
-class App extends Component {
-  render() {
-    const testObj = {
-      testProp: "Should render this text",
-    }
-
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div>
-          {testObj?.testProp}
-          {testObj?.fakeProp}
-        </div>
-      </div>
-    );
-  }
+const OptionalChainingComponent = (props) => {
+  return (
+    <>
+      <div>{props?.text}</div>
+      <div>{props?.optionalText}</div>
+    </>
+  )
+  
 }
 
-export default App;
+OptionalChainingComponent.propTypes = {
+  /** Required text */
+  text: PropTypes.string.isRequired,
+  /** Optional text, checked with optional chaining */
+  optionalText: PropTypes.string
+}
+
+export default OptionalChainingComponent
