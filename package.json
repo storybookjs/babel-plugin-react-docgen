@@ -1,11 +1,12 @@
 {
   "version": "4.2.1",
-  "name": "babel-plugin-react-docgen",
+  "name": "@nearform/babel-plugin-react-docgen",
   "description": "Babel plugin to add react-docgen info into your code",
   "repository": "https://github.com/storybooks/babel-plugin-react-docgen",
   "author": "Madushan Nishantha <j.l.madushan@gmail.com>",
   "contributors": [
-    "Charles Lehnert"
+    "Charles Lehnert",
+    "Salman Mitha <salman.mitha@nearform.com>"
   ],
   "main": "lib/index.js",
   "files": [

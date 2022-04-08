@@ -1,3 +1,7 @@
+# Warning
+
+This is a forked version, please check if this PR (https://github.com/storybookjs/babel-plugin-react-docgen/pull/74) is merged and move to the original plugin.
+
 # babel-plugin-react-docgen
 
 [react-docgen](https://github.com/reactjs/react-docgen) allows you to write propType descriptions, class descriptions and access propType metadata programatically.
