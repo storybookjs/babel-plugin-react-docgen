@@ -52,6 +52,7 @@ function injectReactDocgenInfo(path, state, code, t) {
     docgenResults = ReactDocgen.parse(code, resolver, handlers, {
       ...opts,
       filename,
+      importer: ReactDocgen.importers.makeFsImporter(),
     });
 
     if (docgenResults && !Array.isArray(docgenResults)) {
