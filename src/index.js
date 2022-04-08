@@ -51,6 +51,7 @@ function injectReactDocgenInfo(path, state, code, t) {
     const handlers = [...defaultHandlers, ...customHandlers, actualNameHandler];
     docgenResults = ReactDocgen.parse(code, resolver, handlers, {
       ...opts,
+      importer: ReactDocgen.importers.makeFsImporter(),
       filename,
     });
 
